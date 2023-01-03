@@ -30,7 +30,7 @@ import { Color } from "../constant/styled";
 const config = [
 
   { label: "key_1", link: "/" },
-  { label: "MARKETPLACE", link: "/coming-soon" },
+  { label: "MARKETPLACE", link: "", href: "https://marketplace.infinityangel.io/" },
   { label: "key_2", link: "/coming-soon" },
   { label: "key_3", link: "/coming-soon" },
   { label: "key_4", link: "/coming-soon" },
@@ -225,7 +225,7 @@ export default function Header() {
                   </Link>
                 ))}
                 {config.map((item, index) => {
-                  if (item.link.indexOf("#") <= -1) {
+                  if (item.link && item.link.indexOf("#") <= -1) {
                     return (
                       <Link
                         to={item.link}
@@ -238,16 +238,13 @@ export default function Header() {
                     );
                   } else
                     return (
-                      <Link
-                        to={item.link}
-                        onClick={() => {
-                          scroll(item);
-                        }}
-                        key={index}
-                      // className={indexTag === item ? "active" : ""}
+                      <a
+                        href={item.href}
+                        target='_blank'
+                        key={index} rel="noreferrer"
                       >
                         {library[item.label]}
-                      </Link>
+                      </a>
                     );
                 })}
 
