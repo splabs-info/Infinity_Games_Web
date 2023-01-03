@@ -59,7 +59,7 @@ export const Navbar = styled(Box)(({ theme }) => ({
     "& a.logo": {
         padding: '0',
         margin: '0',
-        marginLeft: '-1rem'
+        marginLeft: '1rem'
     },
     "& a.logo:hover": {
         borderBottom: "0px solid #01E8C6",

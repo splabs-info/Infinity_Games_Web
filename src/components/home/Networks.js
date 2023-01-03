@@ -1,7 +1,7 @@
 
 import { Box, Container, } from "@mui/material";
 import { alpha, styled } from "@mui/system";
-import { MultiChainBox, MultiChainTitle, NetworkBox, TitleBox, TypographyGradient, TypographyShadow } from "./HomeStyles";
+import { MultiChainBox, MultiChainTitle, NetworkBox, TitleBox, TypographyShadow } from "./HomeStyles";
 import useResponsive from "../../hooks/useResponsive";
 import Slider from "react-slick";
 import { networksSliderSettings } from "./SliderSettings";
@@ -78,12 +78,12 @@ export default function Networks() {
     <Box pb={5}
       sx={{
         background: "url('/images/background/bg-2.jpg')",
-        backgroundSize: isDesktop ? "100% 100%" : "cover",
+        backgroundSize: "100% 100%",
       }} >
       <Box id="Network" sx={{
         background: alpha('#051540', 0.15),
         padding: '0rem 0',
-        marginBottom: '2rem',
+        marginBottom: isDesktop ? '2rem' : '0.5rem',
       }}>
         <Container>
           <SliderCustom {...networksSliderSettings}>

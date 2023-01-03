@@ -1,7 +1,7 @@
-import { Box, Container, } from "@mui/material";
+import { Box, Container, Hidden, } from "@mui/material";
 import { styled } from "@mui/system";
 import { useSelector } from "react-redux";
-import { TitleBox, TypographyGradient, TypographyShadow } from "./HomeStyles";
+import { ImagesAccent, TitleBox, TypographyGradient, TypographyShadow } from "./HomeStyles";
 import useResponsive from "../../hooks/useResponsive";
 
 const ContainerPartner = styled(Box)(({ theme }) => ({
@@ -193,8 +193,19 @@ export default function Partner() {
     <Box pt={isDesktop ? 10 : 5} pb={isDesktop ? 10 : 5}
       sx={{
         background: "url('/images/background/bg-5.jpg')",
-        backgroundSize: isDesktop ? "100% 100%" : "cover",
+        backgroundSize: "100% 100%",
+        position: 'relative'
       }}>
+      <Hidden mdDown>
+        <ImagesAccent component={'img'}
+          src={'/images/home/right-2.png'}
+          alt=""
+          sx={{
+            right: 0,
+            top: '-5rem',
+          }}
+        />
+      </Hidden>
       <Container>
         <TitleBox>
           <TypographyShadow variant='h3'>

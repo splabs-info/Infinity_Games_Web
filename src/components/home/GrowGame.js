@@ -1,9 +1,9 @@
 
-import { Box, Container, Typography, } from "@mui/material";
-import { MultiChainBox, MultiChainTitle, TitleBox, TypographyShadow, VideoBox } from "./HomeStyles";
+import { Box, Container, Hidden, Typography, } from "@mui/material";
+import { ImagesAccent, MultiChainBox, MultiChainTitle, TitleBox, TypographyShadow, VideoBox } from "./HomeStyles";
 import useResponsive from "../../hooks/useResponsive";
 import { growGame } from "./Content";
-import { Color } from "../../constant";
+import { Color } from "../../constant/styled";
 
 
 export default function GrowGame() {
@@ -15,8 +15,27 @@ export default function GrowGame() {
       pb={isDesktop ? 5 : 3}
       sx={{
         background: "url('/images/background/bg-3.jpg')",
-        backgroundSize: isDesktop ? "100% 100%" : "cover",
+        backgroundSize: "100% 100%",
+        position: 'relative'
       }}>
+      <Hidden mdDown>
+        <ImagesAccent component={'img'}
+          src={'/images/home/left-1.png'}
+          alt=""
+          sx={{
+            left: 0,
+            top: '-4rem'
+          }}
+        />
+        <ImagesAccent component={'img'}
+          src={'/images/home/right-1.png'}
+          alt=""
+          sx={{
+            right: 0,
+            bottom: '4rem'
+          }}
+        />
+      </Hidden>
       <Container>
         <TitleBox
           sx={{
@@ -82,6 +101,7 @@ export default function GrowGame() {
           )}
         </Box>
       </Container>
+
     </Box>
   );
 }

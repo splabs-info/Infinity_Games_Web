@@ -1,7 +1,7 @@
 import {
-  Box, Container,
+  Box, Container, Hidden,
 } from "@mui/material";
-import { MilestonesBox, MilestonesList, MilestonesTitle, TitleBox, TypographyShadow } from "./HomeStyles";
+import { ImagesAccent, MilestonesBox, MilestonesList, MilestonesTitle, TitleBox, TypographyShadow } from "./HomeStyles";
 import useResponsive from "../../hooks/useResponsive";
 import { milestonesContent } from "./Content";
 
@@ -17,9 +17,21 @@ export default function Milestones() {
       pt={isDesktop ? 6 : 3} pb={10}
       sx={{
         background: "url('/images/background/bg-4.jpg')",
-        backgroundSize: isDesktop ? "100% 100%" : "cover",
+        backgroundSize: "100% 100%",
+        position: 'relative'
       }}
     >
+      <Hidden mdDown>
+        <ImagesAccent component={'img'}
+          src={'/images/home/left-2.png'}
+          alt=""
+          sx={{
+            left: 0,
+            top: '50%',
+            transform: 'translateY(-50%)'
+          }}
+        />
+      </Hidden>
       <Container>
         <TitleBox>
           <TypographyShadow variant='h3' >

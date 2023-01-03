@@ -25,7 +25,7 @@ import useResponsive from "../hooks/useResponsive";
 import { AppConfig } from "../setting";
 import Languages from "./Languages";
 import { WhitePaperButton, HeaderBox, IconLang, Navbar, ApplyButton } from "../components/header/HeaderStyles";
-import { Color } from "../constant";
+import { Color } from "../constant/styled";
 
 const config = [
 

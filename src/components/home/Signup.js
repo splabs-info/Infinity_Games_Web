@@ -3,7 +3,7 @@ import { Box, Container, FormControl, Grid, TextField, Typography, alpha, } from
 import { useSelector } from "react-redux";
 import { ApplyGameButton, MilestonesTitle, SignUpGrid, TitleBox, TypographyShadow } from "./HomeStyles";
 import useResponsive from "../../hooks/useResponsive";
-import { Color } from "../../constant";
+import { Color } from "../../constant/styled";
 
 export default function Signup() {
   const isDesktop = useResponsive("up", "md");
@@ -13,7 +13,7 @@ export default function Signup() {
     <Box pt={isDesktop ? 5 : 2} pb={isDesktop ? 10 : 5}
       sx={{
         background: "url('/images/background/bg-7.jpg')",
-        backgroundSize: isDesktop ? "100% 100%" : "cover",
+        backgroundSize: "100% 100%",
       }}>
       <Container>
         <TitleBox>

@@ -100,3 +100,30 @@ export const socialMembersEcosystem = [
     icon: '/images/icon/icon-fb-white.png'
   },
 ]
+export const gamesEcosystem = [
+  {
+    label: 'Immortal Wars',
+    src: '/images/ecosystem/immortal-wars.jpg',
+    status: 'on going'
+  },
+  {
+    label: 'Immortal Wars',
+    src: '/images/ecosystem/immortal-wars.jpg',
+    status: 'on going'
+  },
+  {
+    label: 'Aquapnix',
+    src: '/images/ecosystem/aquapnix.jpg',
+    status: 'on going'
+  },
+  {
+    label: 'GunZ Reborn',
+    src: '/images/ecosystem/gunz.jpg',
+    status: 'preparing'
+  },
+  {
+    label: 'Eureka-3M City',
+    src: '/images/ecosystem/eureka-3m.jpg',
+    status: 'preparing'
+  },
+]

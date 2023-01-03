@@ -1,10 +1,11 @@
 
-import { Box, Container, Grid, Typography, } from "@mui/material";
+import { Box, Container, Grid, Hidden, Typography, } from "@mui/material";
 import { useSelector } from "react-redux";
-import { TitleBox, TypographyShadow, VideoBox } from "./HomeStyles";
+import { GameBox, GameTextBox, ImagesAccent, SliderCustom, TitleBox, TypographyShadow, VideoBox } from "./HomeStyles";
 import useResponsive from "../../hooks/useResponsive";
-import { contentEcosystem, imgPartnersEcosystem, socialMembersEcosystem } from "./Content";
-
+import { contentEcosystem, gamesEcosystem, imgPartnersEcosystem, socialMembersEcosystem } from "./Content";
+import { ecosystemSliderSettings } from "./SliderSettings";
+import { BoxStyled } from "../../constant/styled";
 
 export default function Ecosystem() {
   const isDesktop = useResponsive("up", "md");
@@ -14,8 +15,20 @@ export default function Ecosystem() {
     <Box pt={isDesktop ? 5 : 2} pb={isDesktop ? 5 : 2}
       sx={{
         background: "url('/images/background/bg-6.jpg')",
-        backgroundSize: isDesktop ? "100% 100%" : "cover",
+        // backgroundSize: "100% 100%",
+        backgroundSize: "100% 100%",
+        position: 'relative'
       }}>
+      <Hidden mdDown>
+        <ImagesAccent component={'img'}
+          src={'/images/home/left-3.png'}
+          alt=""
+          sx={{
+            left: 0,
+            bottom: '0',
+          }}
+        />
+      </Hidden>
       <Container>
         <TitleBox pb={isDesktop ? 5 : 2}>
           <TypographyShadow variant='h3'>
@@ -27,13 +40,13 @@ export default function Ecosystem() {
           <Grid container>
             <Grid item xs={12} md={7}>
               <img alt="infinity" src="/images/ecosystem/pic-1.jpg" />
-              <Box display='flex' justifyContent='center' mt={2}>
+              <Box display='flex' justifyContent='center' flexWrap={!isDesktop && 'wrap'} mt={2} mb={!isDesktop && 2}>
                 {imgPartnersEcosystem.map((item, index) =>
                   <img src={`/images/ecosystem/${item.label}.png`} alt={item.label} key={index} style={{ borderRadius: '15px' }} />
                 )}
               </Box>
             </Grid>
-            <Grid item xs={12} md={5} pl={4}>
+            <Grid item xs={12} md={5} pl={isDesktop && 4}>
               <Box display='flex'>
                 <Box width={'80%'} display='flex' mb={2}>
                   <Box width={'30%'}>
@@ -84,6 +97,26 @@ export default function Ecosystem() {
             </Grid>
           </Grid>
         </VideoBox>
+        <SliderCustom {...ecosystemSliderSettings}>
+          {gamesEcosystem.map((item, index) =>
+            <GameBox key={index}>
+              <Box component={'img'}
+                alt=''
+                src={item.src}
+              />
+              <GameTextBox>
+                <Typography>
+                  {item.label}
+                </Typography>
+                <Typography>
+                  {item.status}
+                </Typography>
+              </GameTextBox>
+            </GameBox>
+          )}
+        </SliderCustom>
+
+
         <TitleBox pt={isDesktop ? 10 : 5}>
           <TypographyShadow variant='h3'>
             Guild Games
@@ -111,7 +144,11 @@ export default function Ecosystem() {
             border: '1px solid white',
             borderRadius: '30px',
             padding: '1rem',
-            marginTop: '2rem'
+            marginTop: '2rem',
+            "&:hover": {
+              transition: '0.5s',
+              boxShadow: BoxStyled.boxShadow,
+            },
           }}>
             <img alt="" src="/images/ecosystem/certik.png" />
           </Box>

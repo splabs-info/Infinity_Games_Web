@@ -21,7 +21,7 @@ export default function TitleMain() {
     <Box
       sx={{
         background: "url('/images/background/bg-1.jpg')",
-        backgroundSize: isDesktop ? "100% 100%" : "cover",
+        backgroundSize: isDesktop ? "100% 100%" : "100% 100%",
         backgroundPosition: 'center',
         minHeight: isTablet ? 'unset' : "100vh",
       }}
