@@ -181,10 +181,6 @@ const partners = [
     label: 'Influencer',
     link: 'https://www.itfluencer.co.kr/',
   },
-  {
-    label: 'KLT',
-    link: 'https://www.saramin.co.kr/zf_user/company-info/view/csn/SmUra3BsZ25CL2F4YmFHaTJGU1IrUT09/company_nm/Korea%20Land%20Tour%20KLT',
-  },
 ];
 
 export default function Partner() {
