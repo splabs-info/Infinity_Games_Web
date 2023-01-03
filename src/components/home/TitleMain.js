@@ -37,9 +37,9 @@ export default function TitleMain() {
               display: 'flex',
               flexDirection: 'column',
               alignSelf: 'center',
-              justifyContent: isDesktop ? 'flex-start' : 'center'
+              justifyContent: isMobile ? 'center' : 'flex-start'
             }}>
-            <Box mt={isDesktop ? 5 : 0} textAlign={isMobile && 'center'}>
+            <Box mt={isDesktop ? 5 : 0} textAlign={!isDesktop && 'center'}>
               <Typography
                 fontSize={isDesktop ? "2rem" : '1.5rem'}
                 fontFamily='SVN-Gilroy-heavy'
@@ -65,7 +65,7 @@ export default function TitleMain() {
                   sx={{
                     color: 'white',
                     fontSize: isMobile && '14px',
-                    textAlign: isMobile && 'center',
+                    textAlign: !isDesktop && 'center',
                   }}>
                   {item}
                 </Box>

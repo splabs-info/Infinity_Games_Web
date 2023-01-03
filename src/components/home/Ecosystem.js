@@ -9,6 +9,7 @@ import { BoxStyled } from "../../constant/styled";
 
 export default function Ecosystem() {
   const isDesktop = useResponsive("up", "md");
+  const isMobile = useResponsive("down", "sm");
   const { setting } = useSelector((state) => state);
   const { library } = setting;
   return (
@@ -40,9 +41,9 @@ export default function Ecosystem() {
           <Grid container>
             <Grid item xs={12} md={7}>
               <img alt="infinity" src="/images/ecosystem/pic-1.jpg" />
-              <Box display='flex' justifyContent='center' flexWrap={!isDesktop && 'wrap'} mt={2} mb={!isDesktop && 2}>
+              <Box display='flex' justifyContent='center' alignItems={'center'} mt={2} mb={!isDesktop && 2}>
                 {imgPartnersEcosystem.map((item, index) =>
-                  <img src={`/images/ecosystem/${item.label}.png`} alt={item.label} key={index} style={{ borderRadius: '15px' }} />
+                  <img src={`/images/ecosystem/${item.label}.png`} alt={item.label} key={index} style={{ maxWidth: '25%' }} />
                 )}
               </Box>
             </Grid>
@@ -53,7 +54,7 @@ export default function Ecosystem() {
                     <img src={`/images/ecosystem/logo-square.jpg`} alt={''} style={{ borderRadius: '5px' }} />
                   </Box>
                   <Box width={'70%'}
-                    sx={{ color: 'white' }}>
+                    sx={{ color: 'white', paddingLeft: '1rem', }}>
                     <Box sx={{
                       padding: '0.5rem 1rem',
                       borderRadius: '10px',
@@ -61,7 +62,7 @@ export default function Ecosystem() {
                         "linear-gradient(270deg, #43DDDA 0%,  #1CC2BF 100%)",
                       display: 'inline-block'
                     }}>
-                      <Typography>PAST PROJECTS</Typography>
+                      <Typography variant='body2'>PAST PROJECTS</Typography>
                     </Box>
                     <Typography variant="h4">Infinity Angel</Typography>
                   </Box>

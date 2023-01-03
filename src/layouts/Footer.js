@@ -125,8 +125,8 @@ export default function Footer() {
             <Typography variant="body1" sx={{
               fontSize: ".9rem",
               textAlign: isMobile && 'center',
-              padding: isMobile && '0 10%',
               paddingRight: !isMobile && '3rem',
+              padding: isMobile && '0 10%',
               margin: '2rem 0',
             }}>
               Infinity Angel is an 'AOS-style real-time online

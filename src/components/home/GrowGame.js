@@ -8,6 +8,7 @@ import { Color } from "../../constant/styled";
 
 export default function GrowGame() {
   const isDesktop = useResponsive("up", "md");
+  const isMobile = useResponsive("down", "sm");
 
   return (
     <Box
@@ -60,7 +61,10 @@ export default function GrowGame() {
             marginTop: isDesktop ? '8rem' : '4rem'
           }}>
 
-          <TypographyShadow variant='h3' >
+          <TypographyShadow variant='h3' sx={{
+            paddingLeft: isMobile && 'calc(50% - 150px)',
+            paddingRight: isMobile && 'calc(50% - 150px)',
+          }}>
             Grow Game Project with Multi-Chain
           </TypographyShadow>
           <img alt="infinity" src="/images/home/line-3.png" />
@@ -68,8 +72,8 @@ export default function GrowGame() {
             textAlign: 'center',
             paddingTop: '1rem',
             paddingBottom: '1rem',
-            paddingLeft: '25%',
-            paddingRight: '25%',
+            paddingLeft: isDesktop ? '25%' : '10%',
+            paddingRight: isDesktop ? '25%' : '10%',
             color: Color.text,
           }}>
             Infinity Games helps game projects expand their reach to new users
@@ -79,9 +83,9 @@ export default function GrowGame() {
         <Box
           mt={5}
           mb={5}
-          display={isDesktop ? 'inline-flex' : 'flex'}
+          display={isMobile ? 'flex' : 'inline-flex'}
           justifyContent={'space-between'}
-          flexDirection={!isDesktop && 'column'}
+          flexDirection={isMobile && 'column'}
           alignItems={!isDesktop && 'center'}
 
         >

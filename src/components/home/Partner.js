@@ -8,6 +8,8 @@ const ContainerPartner = styled(Box)(({ theme }) => ({
 
   display: "grid",
   width: "100%",
+  zIndex: 1,
+  position: 'relative',
   gridTemplateColumns: "repeat(5, 1fr)",
   [theme.breakpoints.down("md")]: {
     gridTemplateColumns: "repeat(4, 1fr)",
@@ -196,16 +198,7 @@ export default function Partner() {
         backgroundSize: "100% 100%",
         position: 'relative'
       }}>
-      <Hidden mdDown>
-        <ImagesAccent component={'img'}
-          src={'/images/home/right-2.png'}
-          alt=""
-          sx={{
-            right: 0,
-            top: '-5rem',
-          }}
-        />
-      </Hidden>
+
       <Container>
         <TitleBox>
           <TypographyShadow variant='h3'>
@@ -241,6 +234,17 @@ export default function Partner() {
           )}
         </ContainerPartner>
       </Container>
+      <Hidden mdDown>
+        <ImagesAccent component={'img'}
+          src={'/images/home/right-2.png'}
+          alt=""
+          sx={{
+            right: 0,
+            top: '-5rem',
+            zIndex: 0
+          }}
+        />
+      </Hidden>
     </Box>
   );
 }

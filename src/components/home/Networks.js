@@ -73,6 +73,7 @@ const SliderCustom = styled(Slider)(() => ({
 
 export default function Networks() {
   const isDesktop = useResponsive("up", "md");
+  const isMobile = useResponsive("down", "sm");
 
   return (
     <Box pb={5}
@@ -120,9 +121,9 @@ export default function Networks() {
         <Box
           mt={5}
           mb={5}
-          display={isDesktop ? 'inline-flex' : 'flex'}
+          display={isMobile ? 'flex' : 'inline-flex'}
           justifyContent={'space-between'}
-          flexDirection={!isDesktop && 'column'}
+          flexDirection={isMobile && 'column'}
           alignItems={!isDesktop && 'center'}
         >
           {futureMultiChain.map((item, index) =>

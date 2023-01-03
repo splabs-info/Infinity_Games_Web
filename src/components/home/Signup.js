@@ -1,5 +1,5 @@
 
-import { Box, Container, FormControl, Grid, TextField, Typography, alpha, } from "@mui/material";
+import { Box, Container, Grid, TextField, Typography, alpha, } from "@mui/material";
 import { useSelector } from "react-redux";
 import { ApplyGameButton, MilestonesTitle, SignUpGrid, TitleBox, TypographyShadow } from "./HomeStyles";
 import useResponsive from "../../hooks/useResponsive";
@@ -7,6 +7,7 @@ import { Color } from "../../constant/styled";
 
 export default function Signup() {
   const isDesktop = useResponsive("up", "md");
+  const isMobile = useResponsive("down", "sm");
   const { setting } = useSelector((state) => state);
   const { library } = setting;
   return (
@@ -33,7 +34,15 @@ export default function Signup() {
           </Typography>
         </TitleBox>
         <SignUpGrid container>
-          <Grid item xs={12} sm={8} md={6}>
+          <Grid item xs={12} sm={12} md={6}
+            sx={{
+              backgroundImage: (!isDesktop && !isMobile) && 'url(/images/home/signup.jpg)',
+              backgroundSize: (!isDesktop && !isMobile) && 'cover',
+              backgroundPosition: (!isDesktop && !isMobile) && 'center',
+              borderRadius: (!isDesktop && !isMobile) && '0 0 20px 20px',
+              backgroundColor: (!isDesktop && !isMobile) && alpha('#000', 0.5),
+              backgroundBlendMode: (!isDesktop && !isMobile) && 'color'
+            }}>
             <MilestonesTitle sx={{ color: '#01E8C6', display: 'block', textAlign: 'center' }}>
               Sign Up
             </MilestonesTitle>
@@ -83,10 +92,11 @@ export default function Signup() {
             </Box>
           </Grid>
           <Grid item xs={12} sm={4} md={6}
-          // sx={{ background: 'url(/images/home/signup.jpg)'}}
+
           >
-            {/* {!isDesktop && <img alt="" src="/images/home/signup.jpg" width={'100%'} />} */}
-            <img alt="" src="/images/home/signup.jpg" width={'100%'} />
+            {(isDesktop || isMobile) && <img alt="" src="/images/home/signup.jpg" width={'100%'} height={'100%'} />}
+
+            {/* <img alt="" src="/images/home/signup.jpg" width={'100%'} height={'100%'} /> */}
 
           </Grid>
         </SignUpGrid>

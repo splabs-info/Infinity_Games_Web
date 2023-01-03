@@ -83,6 +83,7 @@ export const ButtonTitleBox = styled(Box)(({ theme }) => ({
     fontSize: '1rem',
   },
   [theme.breakpoints.down("md")]: {
+    justifyContent: 'center',
     '& button': {
       minWidth: 'unset',
       fontSize: '0.85rem',
@@ -91,8 +92,6 @@ export const ButtonTitleBox = styled(Box)(({ theme }) => ({
     }
   },
   [theme.breakpoints.down("sm")]: {
-    display: 'flex',
-    justifyContent: 'center',
   },
 
 }));
@@ -102,16 +101,13 @@ export const ApplyButton = styled(Button)(({ theme }) => ({
   position: "relative",
   background: "white",
   color: 'black',
+  minWidth: '200px',
   "&:hover": {
     background:
       "linear-gradient(270deg, #11ADA9 0%, #25CAC6 50%, #2AD8D3 100%)",
     color: 'white',
     transition: '0.5s',
     boxShadow: BoxStyled.boxShadow,
-  },
-  [theme.breakpoints.down("lg")]: {
-
-    minWidth: '200px',
   },
   [theme.breakpoints.down("md")]: {
 
@@ -205,7 +201,8 @@ export const MultiChainBox = styled(Box)(({ theme }) => ({
   },
 
   [theme.breakpoints.down("md")]: {
-    // width: '45%',
+    width: '32%',
+    minHeight: '450px',
   },
   [theme.breakpoints.down("sm")]: {
     width: '90%',
@@ -461,7 +458,10 @@ export const SignUpGrid = styled(Grid)(({ theme }) => ({
     zIndex: "2",
   },
   [theme.breakpoints.down("sm")]: {
-
+    '& img': {
+      borderRadius: '0 0 20px 20px',
+      zIndex: 0
+    },
   },
 
 }));

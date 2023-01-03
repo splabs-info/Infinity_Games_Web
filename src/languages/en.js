@@ -24,7 +24,7 @@ export const en = {
   key_13: "Policy",
   key_14: "Term of User",
 
-  key_15: "Join Join Ecosystem",
+  key_15: "Join Ecosystem",
   key_16: "Apply for Incubation",
   key_17: "Apply for Gamefund",
   key_18: "Apply for Guild",
