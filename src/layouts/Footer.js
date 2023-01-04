@@ -45,7 +45,8 @@ const aboutInfinity = [
   {
     label: "MARKETPLACE",
     link: "https://marketplace.infinityangel.io/"
-  }, {
+  },
+  {
     label: "key_11",
     link: ""
   },

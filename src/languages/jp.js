@@ -1,14 +1,33 @@
 export const jp = {
+  //------3.1.2023-----
 
-  //------15.11.2022-----
+  WHITEPAPER: `Whitepaper`,
+  LITEPAPER: `Litepaper`,
+  INFORMATION: `Information`,
+  PITCHDECK: `Pitchdeck`,
+  COMING_SOON: `Coming soon`,
+  MARKETPLACE: "Marketplace",
+  Connect_Wallet: "Connect Wallet",
+
 
   key_1: "Home",
-  key_2: "IDO",
-  key_3: "INO",
-  key_4: "Swap",
-  key_5: "Stake",
-  key_6: "GT Token",
-  key_7: "Whitepaper",
-  key_8: "Apply for Launchpad",
+  key_2: "Ecosystem",
+  key_3: "Get Token",
+  key_4: "Apply for Gamefund",
 
+  key_9: "Contact",
+
+
+  key_10: "About Us",
+  key_11: "Ecosystem",
+  key_12: "Privacy",
+  key_13: "Policy",
+  key_14: "Term of User",
+
+  key_15: "Join Ecosystem",
+  key_16: "Apply for Incubation",
+  key_17: "Apply for Gamefund",
+  key_18: "Apply for Guild",
+
+  key_20: "Social",
 };

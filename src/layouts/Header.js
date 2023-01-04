@@ -323,7 +323,7 @@ export default function Header() {
       <Drawer open={showSidebar} anchor="right" onClose={handleClose}
         sx={{
           "& .MuiPaper-root": {
-            background: "url('/images/background/bg2.jpg')",
+            background: "url('/images/background/bg-2.jpg')",
           }
         }}>
         <Box sx={{ width: isTablet ? 300 : 300, color: 'white' }} >
@@ -347,7 +347,7 @@ export default function Header() {
             <Hidden lgUp>
               <Divider />
               {config.map((item, index) => {
-                if (item.link.indexOf("#") <= -1) {
+                if (item.link && item.link.indexOf("#") <= -1) {
                   return (
                     <Link
                       to={item.link}
@@ -375,19 +375,25 @@ export default function Header() {
                         }, 1000);
                       }}
                     >
-                      {library[item.label]}
+                      <a
+                        href={item.href}
+                        target='_blank'
+                        key={index} rel="noreferrer"
+                      >
+                        {library[item.label]}
+                      </a>
                     </ListItemText>
                   </ListItemButton>
                 );
               })}
             </Hidden>
-            <Divider />
-
+            {/*  <Divider />
+            
             {subMenus.map((menu, index) => (
               <SubMenu menu={menu} key={index} library={library} />
-            ))}
+            ))} 
 
-            <Divider />
+            <Divider />*/}
           </List>
         </Box>
       </Drawer>

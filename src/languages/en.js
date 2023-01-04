@@ -1,5 +1,5 @@
 export const en = {
-  //------15.11.2022-----
+  //------3.1.2023-----
 
   WHITEPAPER: `Whitepaper`,
   LITEPAPER: `Litepaper`,
