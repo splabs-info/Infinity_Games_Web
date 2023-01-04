@@ -273,8 +273,8 @@ export const MilestonesBox = styled(Box)(({ theme }) => ({
   alignSelf: 'center',
 
   '& .ContentBox': {
-    marginBottom: '-3rem',
-    marginTop: '-3rem',
+    marginBottom: '-1rem',
+    marginTop: '-1rem',
     display: 'flex',
     flexDirection: 'column',
     alignSelf: 'center',
@@ -282,9 +282,9 @@ export const MilestonesBox = styled(Box)(({ theme }) => ({
   },
 
   '& .Milestones-Content': {
-    width: '70%',
-    marginBottom: '-3rem',
-    marginTop: '-3rem',
+    width: '100%',
+    marginBottom: '-1rem',
+    marginTop: '-1rem',
     display: 'flex',
     flexDirection: 'column',
     alignSelf: 'end',

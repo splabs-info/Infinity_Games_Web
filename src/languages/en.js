@@ -14,6 +14,9 @@ export const en = {
   key_2: "Ecosystem",
   key_3: "Get Token",
   key_4: "Apply for Gamefund",
+  key_5: "Node NFT",
+  key_6: "Staking",
+  key_7: "Governance",
 
   key_9: "Contact",
 

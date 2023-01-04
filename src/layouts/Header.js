@@ -29,11 +29,13 @@ import { Color } from "../constant/styled";
 
 const config = [
 
-  { label: "key_1", link: "/" },
   { label: "MARKETPLACE", link: "", href: "https://marketplace.infinityangel.io/" },
   { label: "key_2", link: "/coming-soon" },
+  { label: "key_5", link: "/coming-soon" },
   { label: "key_3", link: "/coming-soon" },
   { label: "key_4", link: "/coming-soon" },
+  { label: "key_6", link: "/coming-soon" },
+  { label: "key_7", link: "/coming-soon" },
 ];
 
 const whitepaper = [

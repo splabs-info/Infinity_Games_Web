@@ -96,7 +96,7 @@ export default function TitleMain() {
             }}
             >
               <img alt="infinity" src="/images/home/home-1.png" width={isDesktop ? '100%' : '75%'}
-                className={isDesktop && 'imgGames'} />
+                className={isDesktop ? 'imgGames' : ''} />
             </Box>
           </Grid>
         </Grid>

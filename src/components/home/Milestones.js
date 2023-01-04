@@ -33,12 +33,11 @@ export default function Milestones() {
         />
       </Hidden>
       <Container>
-        <TitleBox>
+        <TitleBox mb={4}>
           <TypographyShadow variant='h3' >
             Infinity Games Milestones
           </TypographyShadow>
           <img alt="infinity" src="/images/home/line-2.png" />
-
         </TitleBox>
         {milestonesContent.map((item, index) => (
           isDesktop ?

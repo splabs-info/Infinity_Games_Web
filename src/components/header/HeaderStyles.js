@@ -42,9 +42,10 @@ export const Navbar = styled(Box)(({ theme }) => ({
     fontFamily: "SVN-Gilroy-regular",
     textTransform: 'uppercase',
     "& a": {
-        padding: "0 0.5rem",
-        margin: "0 0.5em",
+        padding: "0 0.3rem",
+        margin: "0 0.3em",
         display: 'block',
+        fontSize: '0.95rem',
         "&:last-child": {
             marginRight: "0",
         },

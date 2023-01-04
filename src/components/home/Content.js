@@ -33,25 +33,44 @@ export const growGame = [
 
 export const milestonesContent = [
   {
-    title: 'Q1/2023',
+    title: 'Infinity Angel Era 1.0',
     content: [
-      'Marketplace launch',
-      'Multiverse launch',
+      'Initiate Development',
+      'Blockchain - Game Integration',
+      'Whitepaper',
+      'NFT Marketplace',
+      'Game NFT First Launch',
+      'Official Game Launch',
+      'INO/IDO',
+      '$ING Distribution',
     ],
     status: true
   },
   {
-    title: 'Q2/2023',
+    title: 'Infinity Games 2.0',
     content: [
-      'Mobile Apps',
-      'Guild Management',
-      'Community and Voting on New Features',
+      'Multi-Chain NFT',
+      'Infinity Games Node',
+      'Multi-Chain NFT Marketplace',
+      'Platform Update',
+      'Guild System',
+      'Scholarship',
+      '2nd Game Release',
+      'Main-network Migration to',
+      'Game Mega-update',
+      'DEX Launch',
     ]
   },
   {
-    title: 'Q3 & Q4/2023',
+    title: 'Infinity Games 3.0',
     content: [
-      'Secrets waiting for you to discover!',
+      'ZK-Rollup Integration & Layer 2',
+      'Main-network Launch & Token Swap',
+      'NFT-Enabled Wallet',
+      'DEX Aggregator',
+      'Community-driven Launchpad',
+      'Governance',
+      '$ISG Launch',
     ]
   },
 
