@@ -48,12 +48,20 @@ export default function GrowGame() {
           }}>
 
           <TypographyShadow variant='h3' >
-            Video by SPLabs
+            Previous Game
           </TypographyShadow>
           <img alt="infinity" src="/images/home/line-1.png" />
         </TitleBox>
         <VideoBox>
           <img alt="infinity" src="/images/multi-chain/img-video.jpg" />
+          <Typography
+            variant="h4"
+            sx={{
+              position: 'absolute',
+              bottom: '10%',
+              left: '10%',
+              color: 'white'
+            }}>Infinity Angel Game</Typography>
         </VideoBox>
 
         <TitleBox

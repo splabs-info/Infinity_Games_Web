@@ -167,7 +167,7 @@ export const MultiChainBox = styled(Box)(({ theme }) => ({
   background: "#141B22",
   padding: '1.5rem',
   display: 'flex!important',
-  justifyContent: 'center',
+  justifyContent: 'flex-start',
   alignItems: 'center',
   flexDirection: 'column',
   border: '1px solid #00FFF9',
@@ -260,6 +260,7 @@ export const VideoBox = styled(Box)(({ theme }) => ({
   },
   [theme.breakpoints.down("sm")]: {
 
+    minHeight: '200px',
   },
 }));
 

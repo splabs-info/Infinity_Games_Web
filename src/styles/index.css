@@ -21,3 +21,7 @@ a {
   text-decoration: none;
   color: white;
 }
+
+.imgGames {
+  animation: scale 2s linear infinite;
+}

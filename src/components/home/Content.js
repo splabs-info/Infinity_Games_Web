@@ -2,16 +2,16 @@
 
 export const futureMultiChain = [
   {
-    label: "Extend",
+    label: "Scalability",
     description: "Integrating and extending web3 and blockchain to various chains, anything is possible.",
   },
   {
-    label: "Integration",
-    description: "Integrating and extending web3 and blockchain to various chains, anything is possible.",
+    label: "Layer 2",
+    description: "Running the game on a new Layer 2 or sidechain to speed up and accuracy",
   },
   {
-    label: "Develop",
-    description: "Integrating and extending web3 and blockchain to various chains, anything is possible.",
+    label: "NFT Bridge",
+    description: "Bonding with BNB and Ethereum for Layer 2 chain only for side chains and games",
   },
 ];
 

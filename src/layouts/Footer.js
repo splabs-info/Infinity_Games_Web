@@ -6,7 +6,6 @@ import {
 } from "@mui/material";
 import { useEffect, } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import LogoSPlabs from "../components/common/LogoSPlabs";
 import { EndBox, FooterBox, SocialBox, FooterTitle, UlCustom } from "../components/footer/FooterStyles";
 import useResponsive from "../hooks/useResponsive";
 import { _changeLanguage } from "../store/setting/settingActions";
@@ -64,23 +63,28 @@ const aboutInfinity = [
 const socials = [
   {
     src: "/images/icon/icon-discord.png",
-    link: "",
+    link: "https://discord.gg/f4FEgmYTQF ",
     label: 'Discord',
   },
   {
     src: "/images/icon/icon-telegram.png",
-    link: "",
+    link: "https://t.me/infinityangel_global",
     label: 'Telegram',
   },
   {
     src: "/images/icon/icon-twitter.png",
-    link: "",
+    link: "https://twitter.com/InfinityAngelio",
     label: 'Twitter',
   },
   {
-    src: "/images/icon/icon-medium.png",
-    link: "",
-    label: 'Medium',
+    src: "/images/icon/icon-fb.png",
+    link: "https://www.facebook.com/InfinityAngel.io/  ",
+    label: 'Facebook',
+  },
+  {
+    src: "/images/icon/icon-youtube.png",
+    link: "https://www.youtube.com/channel/UCNPxb1l4SBWFTn106zjs4tg",
+    label: 'Youtube',
   },
 
 ]
@@ -137,7 +141,7 @@ export default function Footer() {
             </Typography>
             <SocialBox>
               {socials.map((item, index) => (
-                <Box key={index} component='a' href={item.link}>
+                <Box key={index} component='a' href={item.link} target="_blank">
                   <Box component='img' src={item.src} />
                 </Box>
               ))}
@@ -156,7 +160,7 @@ export default function Footer() {
             </FooterTitle>
             <UlCustom >
               <li >
-                <a href='mailto:business@gate-keeper.io' target="_blank" rel="noreferrer">
+                <a href='mailto:info@infinitygames.io' target="_blank" rel="noreferrer">
                   info@infinitygames.io
                 </a>
               </li>
@@ -225,7 +229,7 @@ export default function Footer() {
             <UlCustom >
               {socials.map(item => (
                 <li key={item.label}>
-                  <a href={item.link} >
+                  <a href={item.link} target="_blank" rel="noreferrer">
                     {item.label}
                   </a>
                 </li>

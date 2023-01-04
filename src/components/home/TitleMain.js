@@ -74,7 +74,7 @@ export default function TitleMain() {
 
             <ButtonTitleBox>
               <AppButton>
-                <img alt="infinity" src="/images/icon/icon-rocket.png" />&nbsp;&nbsp;Join Ecosystem
+                <img alt="infinity" src="/images/icon/icon-rocket.png" />&nbsp;&nbsp;Apply for Guilds
               </AppButton>
               <ApplyButton>
                 <img alt="infinity" src="/images/icon/icon-note.png" />&nbsp;&nbsp;Contact us
@@ -96,14 +96,7 @@ export default function TitleMain() {
             }}
             >
               <img alt="infinity" src="/images/home/home-1.png" width={isDesktop ? '100%' : '75%'}
-                style={{
-                  transform: isDesktop && 'scale(1.55)',
-                  '&:hover': {
-                    transform: 'scale(1.45)',
-                    transition: '0.5s'
-                  },
-
-                }} />
+                className={isDesktop && 'imgGames'} />
             </Box>
           </Grid>
         </Grid>

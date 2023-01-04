@@ -4409,7 +4409,8 @@
   /* Ensures the content is not revealed until the animation */
   border-right: .15em solid #fa8962;
   /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
+  white-space: nowrap;
+  /* Keeps the content on a single line */
   text-align: center;
   margin: 0 auto;
   /* Gives that scrolling effect as the typing happens */
@@ -4441,5 +4442,29 @@
 
   50% {
     border-color: #fa8962;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scale {
+
+  from,
+  to {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.45);
+  }
+
+  50% {
+    transform: scale(1.55);
+    -webkit-transform: scale(1.55);
   }
 }

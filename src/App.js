@@ -10,6 +10,7 @@ import {
   _changeLanguage,
 } from "./store/setting/settingActions";
 import "./styles/index.css";
+import "./styles/Animation.css";
 import ThemeProvider from "./theme";
 
 export default function App() {

@@ -44,7 +44,7 @@ export default function Signup() {
               backgroundBlendMode: (!isDesktop && !isMobile) && 'color'
             }}>
             <MilestonesTitle sx={{ color: '#01E8C6', display: 'block', textAlign: 'center' }}>
-              Sign Up
+              Apply for Gamefund
             </MilestonesTitle>
             <Box component="form"
               noValidate
@@ -80,24 +80,19 @@ export default function Signup() {
                 type={'email'}
               />
               <TextField
-                label="Platform"
+                label="Game Description"
                 variant="outlined"
                 fullWidth
               />
               <Box display={'flex'} justifyContent='center' mt={3}>
                 <ApplyGameButton>
-                  APPLY GAME
+                  SUBMIT
                 </ApplyGameButton>
               </Box>
             </Box>
           </Grid>
-          <Grid item xs={12} sm={4} md={6}
-
-          >
+          <Grid item xs={12} sm={4} md={6}>
             {(isDesktop || isMobile) && <img alt="" src="/images/home/signup.jpg" width={'100%'} height={'100%'} />}
-
-            {/* <img alt="" src="/images/home/signup.jpg" width={'100%'} height={'100%'} /> */}
-
           </Grid>
         </SignUpGrid>
 
