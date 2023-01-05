@@ -260,6 +260,7 @@ export const VideoBox = styled(Box)(({ theme }) => ({
   },
   [theme.breakpoints.down("sm")]: {
 
+    padding: '.75rem',
     minHeight: '200px',
   },
 }));
