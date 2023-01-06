@@ -57,10 +57,10 @@ export default function Signup() {
                 },
                 '& .MuiInputBase-root': {
                   borderRadius: '0',
-                  color: alpha('#fff', 0.7)
-                },
-                '& .MuiOutlinedInput-notchedOutline': {
-                  borderColor: alpha('#00FFFB', 0.1),
+                  color: alpha('#fff', 0.7),
+                  '& fieldset': {
+                    borderColor: alpha('#00FFFB', 0.15),
+                  },
                 },
               }}>
               <TextField

@@ -128,11 +128,12 @@ export const ApplyButton = styled(Button)(({ theme }) => ({
   background: "white",
   color: 'black',
   minWidth: '200px',
+  transition: '0.5s,background 1s',
   "&:hover": {
     background:
       "linear-gradient(270deg, #11ADA9 0%, #25CAC6 50%, #2AD8D3 100%)",
     color: 'white',
-    transition: '0.5s',
+    transition: '0.5s, background 1s',
     boxShadow: BoxStyled.boxShadow,
   },
   [theme.breakpoints.down("md")]: {
@@ -150,11 +151,13 @@ export const AppButton = styled(Button)(({ theme }) => ({
   color: 'white',
   background:
     "linear-gradient(45deg, #11ADA9 0%, #25CAC6 50%, #2AD8D3 100%)",
+  transition: '0.5s,background 1s',
   "&:hover": {
     background:
       "linear-gradient(270deg, #11ADA9 0%, #25CAC6 50%, #2AD8D3 100%)",
-    transition: '0.5s',
+
     boxShadow: BoxStyled.boxShadow,
+    transition: '0.5s,background 1s',
 
   },
 }));
