@@ -41,12 +41,10 @@ export const ImagesAccent = styled(Box)(({ theme }) => ({
 }));
 
 export const SliderCustom = styled(Slider)(() => ({
-  '&.slick-slide': {
-    padding: "10px!important",
-  },
+
   "& .slick-slide": {
     transition: "all 0.3s ease-in-out",
-    padding: "10px!important",
+    padding: "15px 10px!important",
     "&.slick-active": {
       opacity: "1",
     },
@@ -59,10 +57,38 @@ export const SliderCustom = styled(Slider)(() => ({
     "&.slick-prev": {
       height: "3rem",
     },
-    "& li.slick-active button::before": {
-    },
+  },
+  "& .slick-dots": {
+    bottom: '-16px',
     "& li": {
+      width: 'unset'
     },
+    "& li button": {
+      width: '8px'
+    },
+    "& li button:before": {
+      content: '""',
+      background: Color.primary,
+      padding: 0,
+      opacity: 0.25,
+      borderRadius: '8px',
+      height: '8px',
+      width: '8px',
+      transition: '0.5s',
+      position: 'absolute',
+      left: '50%',
+      top: '50%',
+      transform: 'translate(-50%, -50%)',
+    },
+    "& li.slick-active button:before": {
+      borderRadius: '10px',
+      width: '32px',
+      transition: '0.5s'
+    },
+    "& li.slick-active button": {
+      width: '32px',
+    },
+
   },
 }));
 
@@ -198,6 +224,7 @@ export const MultiChainBox = styled(Box)(({ theme }) => ({
   "&:hover": {
     transform: 'scale(1.1) ',
     transition: '0.5s',
+    boxShadow: BoxStyled.boxShadow2,
   },
 
   [theme.breakpoints.down("md")]: {
@@ -208,6 +235,7 @@ export const MultiChainBox = styled(Box)(({ theme }) => ({
     width: '90%',
     "&:hover": {
       transform: 'scale(1) ',
+      boxShadow: BoxStyled.boxShadow
     },
 
   },
@@ -235,7 +263,7 @@ export const VideoBox = styled(Box)(({ theme }) => ({
   marginBottom: '2rem',
   marginTop: '2rem',
   height: '100%',
-  minHeight: '500px',
+  minHeight: '400px',
   "&::before": {
     content: "url(/images/home/border-radius-long.png)",
     position: "absolute",
@@ -253,6 +281,10 @@ export const VideoBox = styled(Box)(({ theme }) => ({
   },
   "& img": {
     borderRadius: '20px',
+  },
+  "&:hover": {
+    transition: '0.5s',
+    boxShadow: BoxStyled.boxShadow2,
   },
   [theme.breakpoints.down("md")]: {
 

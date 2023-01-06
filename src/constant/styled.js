@@ -8,7 +8,8 @@ export const Color = {
     background: '#19202B'
 };
 export const BoxStyled = {
-    boxShadow: '0 0 10px rgba(0,255,249,0.5)',
+    boxShadow: '0 0 10px rgba(0,255,249,0.5),0 0 12px rgba(0,255,249,0.5)',
+    boxShadow2: '0 0 10px rgba(0,255,249,0.5),0 0 20px rgba(0,255,249,0.5),0 0 40px rgba(0,255,249,0.5)',
     border: '1px solid #00FFF9',
 };
 export const Background = {

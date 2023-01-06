@@ -146,3 +146,21 @@ export const gamesEcosystem = [
     status: 'preparing'
   },
 ]
+export const infinityAnglesImages = [
+  {
+    label: 'Infinity Angle',
+    src: '/images/ecosystem/pic-1.jpg',
+  },
+  {
+    label: 'Infinity Angle',
+    src: '/images/ecosystem/pic-2.jpg',
+  },
+  {
+    label: 'Infinity Angle',
+    src: '/images/ecosystem/pic-3.jpg',
+  },
+  {
+    label: 'Infinity Angle',
+    src: '/images/ecosystem/pic-4.jpg',
+  },
+]

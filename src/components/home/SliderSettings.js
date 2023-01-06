@@ -7,19 +7,6 @@ export const networksSliderSettings = {
   autoplaySpeed: 3000,
   autoplay: true,
   arrows: false,
-  appendDots: dots => {
-    return (
-      <div>
-        <ul>
-          {dots.map((item, index) => {
-            return (
-              <li style={{ color: "red" }} key={index}>{item.props.children}</li>
-            );
-          })}
-        </ul>
-      </div>
-    )
-  },
   responsive: [
     {
       breakpoint: 1024,
@@ -55,19 +42,6 @@ export const platformSliderSettings = {
   autoplaySpeed: 3000,
   autoplay: true,
   arrows: false,
-  appendDots: dots => {
-    return (
-      <div>
-        <ul>
-          {dots.map((item, index) => {
-            return (
-              <li style={{ color: "red" }} key={index}>{item.props.children}</li>
-            );
-          })}
-        </ul>
-      </div>
-    )
-  },
   responsive: [
     {
       breakpoint: 1024,
@@ -105,19 +79,6 @@ export const multiChainSliderSettings = {
   autoplaySpeed: 3000,
   autoplay: true,
   arrows: false,
-  appendDots: dots => {
-    return (
-      <div>
-        <ul>
-          {dots.map((item, index) => {
-            return (
-              <li style={{ color: "red" }} key={index}>{item.props.children}</li>
-            );
-          })}
-        </ul>
-      </div>
-    )
-  },
   responsive: [
     {
       breakpoint: 1024,
@@ -154,19 +115,6 @@ export const ecosystemSliderSettings = {
   autoplaySpeed: 3000,
   autoplay: true,
   arrows: false,
-  appendDots: dots => {
-    return (
-      <div>
-        <ul>
-          {dots.map((item, index) => {
-            return (
-              <li style={{ color: "red" }} key={index}>{item.props.children}</li>
-            );
-          })}
-        </ul>
-      </div>
-    )
-  },
   responsive: [
     {
       breakpoint: 1024,
@@ -193,4 +141,14 @@ export const ecosystemSliderSettings = {
       },
     },
   ],
+};
+export const ecosystemAngleSliderSettings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplaySpeed: 3000,
+  autoplay: true,
+  arrows: false,
 };

@@ -1,11 +1,11 @@
 
-import { Box, Container, } from "@mui/material";
+import { Box, Container, Grid, Hidden, Typography, } from "@mui/material";
 import { alpha, styled } from "@mui/system";
-import { MultiChainBox, MultiChainTitle, NetworkBox, TitleBox, TypographyShadow } from "./HomeStyles";
+import { ImagesAccent, MultiChainBox, MultiChainTitle, NetworkBox, SliderCustom, TitleBox, TypographyShadow, VideoBox } from "./HomeStyles";
 import useResponsive from "../../hooks/useResponsive";
-import Slider from "react-slick";
 import { networksSliderSettings } from "./SliderSettings";
 import { futureMultiChain } from "./Content";
+import { Color } from "../../constant/styled";
 
 const CustomLogo = styled("img")(() => ({
   transition: "transform 150ms ease-in-out",
@@ -41,35 +41,6 @@ const networks = [
 
 ];
 
-const SliderCustom = styled(Slider)(() => ({
-  '&.slick-slide': {
-    padding: "10px!important",
-  },
-  "& .slick-slide": {
-    transition: "all 0.3s ease-in-out",
-    padding: "10px!important",
-    "&.slick-active": {
-      opacity: "1",
-      color: "red",
-
-    },
-    "&.slick-current": {
-      opacity: "1",
-    },
-    "&.slick-center": {
-      marginTop: "-3rem",
-    },
-    "&.slick-prev": {
-      height: "3rem",
-    },
-    "& li.slick-active button::before": {
-      color: "red",
-    },
-    "& li": {
-      color: "red",
-    },
-  },
-}));
 
 export default function Networks() {
   const isDesktop = useResponsive("up", "md");
@@ -80,11 +51,25 @@ export default function Networks() {
       sx={{
         background: "url('/images/background/bg-2.jpg')",
         backgroundSize: "100% 100%",
+        position: 'relative',
       }} >
+      <Hidden mdDown>
+        <ImagesAccent component={'img'}
+          src={'/images/home/right-0.png'}
+          alt=""
+          sx={{
+            right: 0,
+            top: '5rem',
+            zIndex: 0
+          }}
+        />
+      </Hidden>
       <Box id="Network" sx={{
         background: alpha('#051540', 0.15),
         padding: '0rem 0',
         marginBottom: isDesktop ? '2rem' : '0.5rem',
+        position: 'relative',
+        zIndex: 1,
       }}>
         <Container>
           <SliderCustom {...networksSliderSettings}>
@@ -107,6 +92,50 @@ export default function Networks() {
         </Container>
       </Box>
       <Container>
+        <Grid container>
+          <Grid item xs={12} md={6} pt={!isDesktop && '1.5rem'}>
+            <VideoBox sx={{
+              m: 0,
+
+            }}>
+              <img alt="infinity" src="/images/home/signup.jpg" style={{ border: '1px solid rgb(0, 255, 249,0.25)' }} />
+            </VideoBox>
+          </Grid>
+          <Grid item xs={12} md={6}
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'flex-end',
+              paddingLeft: isDesktop && '4rem',
+              paddingTop: !isDesktop && '2rem',
+              position: 'relative',
+              zIndex: 1,
+            }}
+          >
+            <Box display='inline-block' fontSize={isDesktop ? '4.5rem' : '2.5rem'} textAlign={!isDesktop && 'center'}>
+              <Typography variant='span' sx={{
+                textShadow: '0 0 8px rgba(111,255,251,0.8)',
+                lineHeight: '1.3',
+                fontFamily: "SVN-Gilroy-heavy",
+                WebkitTextStroke: '1px rgb(255,255,255)',
+              }}>
+                Node&nbsp;
+              </Typography>
+              <TypographyShadow variant='span'>
+                NFT
+              </TypographyShadow>
+            </Box>
+            <Typography variant="p" sx={{
+              paddingTop: '1rem',
+              paddingBottom: '1rem',
+              color: Color.text,
+              textAlign: !isDesktop && 'center'
+            }}>
+              If you want to get a special NFT that can be used in each game, choose Node NFT. You will be able to enjoy the game by owning game NFTs that no one else can get. In addition, along with $ING and $ISG, which are currencies to be used within the ecosystem
+            </Typography>
+          </Grid>
+        </Grid>
+
         <TitleBox
           sx={{
             marginTop: isDesktop ? '8rem' : '4rem',
