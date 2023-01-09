@@ -1,3 +1,19 @@
+
+export const buyOnSliderSettings = {
+  dots: false,
+  infinite: true,
+  speed: 700,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplaySpeed: 3000,
+  autoplay: true,
+  arrows: false,
+  vertical: true,
+  verticalSwiping: true,
+  adaptiveHeight: true,
+  variableHeight: false,
+};
+
 export const networksSliderSettings = {
   dots: false,
   infinite: true,
@@ -33,6 +49,7 @@ export const networksSliderSettings = {
     },
   ],
 };
+
 export const platformSliderSettings = {
   dots: false,
   infinite: true,

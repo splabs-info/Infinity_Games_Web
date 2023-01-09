@@ -98,8 +98,8 @@ export const WhitePaperButton = styled(Button)(() => ({
     marginRight: "2rem",
     background: 'transparent',
     fontFamily: "SVN-Gilroy-regular",
-    fontSize: '1rem',
-    fontWeight: 500,
+    fontSize: '0.9rem',
+    padding: 0,
     "&:hover": {
         borderBottom: "1px solid #01E8C6",
         borderRadius: '0px',

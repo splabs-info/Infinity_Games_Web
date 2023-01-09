@@ -4,14 +4,16 @@ import {
     Button,
 } from "@mui/material";
 import { styled } from "@mui/system";
+import { Color } from "../../constant/styled";
 
 export const HeaderBox = styled(Box)(({ theme }) => ({
     display: "flex",
     alignItems: "center",
+    flexDirection: 'column',
     position: "fixed",
     width: "100vw",
     zIndex: "10",
-    borderBottom: '1px solid rgba(138,138,160,0.8)',
+    borderBottom: '1px solid rgba(71,193,190,0.1)',
     '& .sticky-scroll': {
         backdropFilter: "blur(10px)",
         WebkitBackdropFilter: "blur(10px)",
@@ -32,6 +34,53 @@ export const HeaderBox = styled(Box)(({ theme }) => ({
             width: '250px',
         }
     }
+}));
+
+export const PriceBox = styled(Box)(({ theme }) => ({
+    display: "flex",
+    alignItems: "center",
+    width: "100vw",
+    zIndex: "10",
+    paddingLeft: '0.75rem',
+    borderTop: '1px solid rgba(71,193,190,0.1)',
+    color: Color.text,
+    '& .MuiBox-root': {
+        marginRight: '1rem',
+        display: 'inline-flex',
+        '& .MuiTypography-root': {
+            marginRight: '0.5rem',
+            whiteSpace: 'nowrap'
+        }
+    },
+
+    '& .Change': {
+        color: 'white',
+        fontWeight: 600,
+        padding: '0.25rem 1.5rem 0.25rem 0.75rem',
+        borderRadius: '8px',
+        position: 'relative',
+        "&::after ": {
+            content: '"‣"',
+            position: 'absolute',
+            right: '0.75rem',
+            top: '50%',
+            fontSize: '1.25rem',
+        }
+    },
+    '& .Down': {
+        background: Color.red,
+        "&::after ": {
+            transform: 'translate(50%, -50%) rotate(90deg)',
+        }
+    },
+    '& .Up': {
+        background: Color.secondary,
+        "&::after ": {
+            transform: 'translate(50%, -50%) rotate(-90deg)',
+        }
+    }
+
+
 }));
 
 export const Navbar = styled(Box)(({ theme }) => ({

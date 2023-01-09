@@ -5,7 +5,9 @@ export const Color = {
     accent: '#01E8C6',
     text: '#7780A1',
     text_2: '#083250',
-    background: '#19202B'
+    background: '#19202B',
+    red: '#E04848',
+    green: '#52FF00'
 };
 export const BoxStyled = {
     boxShadow: '0 0 10px rgba(0,255,249,0.5),0 0 12px rgba(0,255,249,0.5)',

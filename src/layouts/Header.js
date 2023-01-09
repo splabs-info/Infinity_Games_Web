@@ -16,6 +16,8 @@ import {
   ListItemText,
   Menu,
   MenuItem,
+  Stack,
+  Typography,
 } from "@mui/material";
 import { IconMenu2, IconWallet } from "@tabler/icons";
 import { useEffect, useState } from "react";
@@ -24,8 +26,12 @@ import { Link } from "react-router-dom";
 import useResponsive from "../hooks/useResponsive";
 import { AppConfig } from "../setting";
 import Languages from "./Languages";
-import { WhitePaperButton, HeaderBox, IconLang, Navbar, ApplyButton } from "../components/header/HeaderStyles";
+import { WhitePaperButton, HeaderBox, IconLang, Navbar, ApplyButton, PriceBox } from "../components/header/HeaderStyles";
 import { Color } from "../constant/styled";
+import { SliderCustom } from "../components/home/HomeStyles";
+import { buyOnSliderSettings, networksSliderSettings } from "../components/home/SliderSettings";
+import axios from "axios";
+import { whitepaper } from "../components/home/Content";
 
 const config = [
 
@@ -36,29 +42,6 @@ const config = [
   { label: "key_4", link: "/coming-soon" },
   { label: "key_6", link: "/coming-soon" },
   { label: "key_7", link: "/coming-soon" },
-];
-
-const whitepaper = [
-  {
-    lang: "English",
-    url: "/",
-    icon: "/images/icon/icon-en.png",
-  },
-  {
-    lang: "Korean",
-    url: "/",
-    icon: "/images/icon/icon-kr.png",
-  },
-  {
-    lang: "Vietnamese",
-    url: "/",
-    icon: "/images/icon/icon-vn.png",
-  },
-  {
-    lang: "Japanese",
-    url: "/",
-    icon: "/images/icon/icon-jp.png",
-  },
 ];
 
 const subMenus = [
@@ -148,22 +131,51 @@ const subMenus = [
   },
 ];
 
+const buyOns = [
+  {
+    label: "gate.io",
+    link: "/",
+  },
+  {
+    label: "phemex",
+    link: "/",
+  },
+  {
+    label: "mexc",
+    link: "/",
+  },
+  {
+    label: "hotbit",
+    link: "/",
+  },
+  {
+    label: "huobi",
+    link: "/",
+  },
+
+];
+
 export default function Header() {
   const { setting } = useSelector((state) => state);
   const { library } = setting;
   const isTablet = useResponsive(`down`, `md`);
+  const isMobile = useResponsive(`down`, `sm`);
+
+
+  const [changeINGData, setChangeINGData] = useState('');
+  const [priceData, setPriceData] = useState();
 
   const [scrollPositionToggle, setScrollPositionToggle] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
-  const [anchorEl, setAnchorEl] = useState(null);
-  const open = Boolean(anchorEl);
+  // const [anchorEl, setAnchorEl] = useState(null);
+  // const open = Boolean(anchorEl);
 
-  const handleCloseMenu = () => {
-    setAnchorEl(null);
-  };
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
+  // const handleCloseMenu = () => {
+  //   setAnchorEl(null);
+  // };
+  // const handleClick = (event) => {
+  //   setAnchorEl(event.currentTarget);
+  // };
 
   const scroll = (id) => {
     const section = document.querySelector(`${id}`);
@@ -193,6 +205,30 @@ export default function Header() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      axios.get(`https://data.gateapi.io/api2/1/marketlist`)
+        .then((getData) => {
+          setPriceData(getData.data.data.find((item) => item.symbol === 'ING'));
+        })
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    axios.get(`https://data.gateapi.io/api2/1/ticker/ing_usdt`)
+      .then((getData) => {
+        setChangeINGData(getData.data);
+      })
+    const timer = setInterval(() => {
+      axios.get(`https://data.gateapi.io/api2/1/ticker/ing_usdt`)
+        .then((getData) => {
+          setChangeINGData(getData.data);
+        })
+    }, 20000);
+    return () => clearInterval(timer);
   }, []);
 
   return (
@@ -250,12 +286,9 @@ export default function Header() {
                     );
                 })}
 
-                <ApplyButton>
-                  <img src="/images/icon/icon-wallet.png" alt="" />&nbsp;&nbsp; {library.Connect_Wallet}
-                </ApplyButton>
-                {/* <div>
+                {/*   <div>
                   <WhitePaperButton onClick={handleClick}>
-                    {library.key_7}&nbsp;&nbsp;
+                    {library.WHITEPAPER}&nbsp;&nbsp;
                     <span
                       style={{
                         width: 0,
@@ -295,6 +328,10 @@ export default function Header() {
                     ))}
                   </Menu>
                 </div> */}
+
+                <ApplyButton>
+                  <img src="/images/icon/icon-wallet.png" alt="" />&nbsp;&nbsp; {library.Connect_Wallet}
+                </ApplyButton>
                 {/* <Languages sx={{ color: "white" }} /> */}
               </Hidden>
 
@@ -320,6 +357,74 @@ export default function Header() {
             </Box>
           </Navbar>
         </Container>
+        {!scrollPositionToggle &&
+          <Hidden smDown>
+            <PriceBox spacing={3}>
+              <Container
+                maxWidth={"xl"}
+                sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: 'center',
+                }}
+              >
+                <Box>
+                  <Typography>ING:</Typography>
+                  <Typography minWidth={100} color={Color.accent}>$ {priceData?.rate}</Typography>
+                </Box>
+                <Box sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: 'center',
+                }}>
+                  <Typography>Historical change:</Typography>
+                  {changeINGData?.percentChange && <Typography className={changeINGData?.percentChange > 0 ? "Up Change" : "Down Change"}>
+                    {Math.abs(changeINGData?.percentChange)}</Typography>}
+                </Box>
+                <Box sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  flexDirection: 'row'
+                }}>
+                  <Typography color={Color.text} ml={2}> Buy On </Typography>
+                  <SliderCustom {...buyOnSliderSettings}>
+                    {buyOns.map((item, index) =>
+                      <Stack
+                        flexDirection={'row'}
+                        alignItems={'center'}
+                        spacing={2}
+                        key={index}
+                        display={'flex!important'}>
+                        <a
+                          href={item.link}
+                          target="_blank"
+                          rel="noreferrer"
+                          style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            flexDirection: 'row'
+                          }}
+                        >
+                          <Box component={'img'}
+                            src={`./images/icon/icon-${item.label}.png`}
+                            alt={item.label}
+                            mr={'8px!important'}
+                          />
+                          <Typography textTransform={'capitalize'}>{item.label}</Typography>
+                          <Box component={'img'}
+                            src={`./images/icon/icon-arrow-up.png`}
+                            alt={item.label}
+                          />
+
+                        </a>
+                      </Stack>
+                    )}
+                  </SliderCustom>
+                </Box>
+              </Container>
+            </PriceBox>
+          </Hidden>
+        }
       </HeaderBox>
 
       <Drawer open={showSidebar} anchor="right" onClose={handleClose}

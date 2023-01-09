@@ -1,4 +1,26 @@
 
+export const whitepaper = [
+  {
+    lang: "English",
+    url: "https://infinityangel.gitbook.io/infinity-games-2.0/",
+    icon: "/images/icon/icon-en.png",
+  },
+  {
+    lang: "Korean",
+    url: "https://infinityangel.gitbook.io/korea-infinity-games-2.0/",
+    icon: "/images/icon/icon-kr.png",
+  },
+  {
+    lang: "Vietnamese",
+    url: "https://infinityangel.gitbook.io/vietnam-infinity-games-2.0/",
+    icon: "/images/icon/icon-vn.png",
+  },
+  {
+    lang: "Japanese",
+    url: "https://infinityangel.gitbook.io/japan-infinity-games-2.0/",
+    icon: "/images/icon/icon-jp.png",
+  },
+];
 
 export const futureMultiChain = [
   {

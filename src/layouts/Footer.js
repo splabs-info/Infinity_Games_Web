@@ -2,13 +2,17 @@ import {
   Box,
   Container,
   Grid,
+  Menu,
+  MenuItem,
   Typography,
 } from "@mui/material";
-import { useEffect, } from "react";
+import { useEffect, useState, } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { EndBox, FooterBox, SocialBox, FooterTitle, UlCustom } from "../components/footer/FooterStyles";
+import { EndBox, FooterBox, SocialBox, FooterTitle, UlCustom, WhitePaperButton } from "../components/footer/FooterStyles";
 import useResponsive from "../hooks/useResponsive";
 import { _changeLanguage } from "../store/setting/settingActions";
+import { IconLang } from "../components/header/HeaderStyles";
+import { whitepaper } from "../components/home/Content";
 
 
 
@@ -36,11 +40,6 @@ const joinInfinity = [
 ]
 
 const aboutInfinity = [
-
-  {
-    label: "WHITEPAPER",
-    link: ""
-  },
   {
     label: "MARKETPLACE",
     link: "https://marketplace.infinityangel.io/"
@@ -97,6 +96,16 @@ export default function Footer() {
 
   const isMobile = useResponsive("down", "sm");
   const isTablet = useResponsive("down", "md");
+
+  const [anchorEl2, setAnchorEl2] = useState(null);
+  const open = Boolean(anchorEl2);
+
+  const handleCloseMenu = () => {
+    setAnchorEl2(null);
+  };
+  const handleClick = (event) => {
+    setAnchorEl2(event.currentTarget);
+  };
 
   useEffect(() => {
     dispatch(_changeLanguage(localStorage.getItem("lang")));
@@ -179,8 +188,48 @@ export default function Footer() {
           >
             <FooterTitle>
               {library.key_10}
-            </FooterTitle>
+            </FooterTitle><div>
+              <WhitePaperButton onClick={handleClick}>
+                {library.WHITEPAPER}&nbsp;&nbsp;
+                <span
+                  style={{
+                    width: 0,
+                    height: 0,
+                    borderLeft: "6px solid transparent",
+                    borderRight: "6px solid transparent",
+                    borderTop: "6px solid #fee8e2",
+                  }}
+                ></span>
+              </WhitePaperButton>
+              <Menu
+                id="basic-menu"
+                anchorEl={anchorEl2}
+                open={open}
+                onClose={handleCloseMenu}
+              >
+                {whitepaper.map((item) => (
+                  <MenuItem
+                    key={item.url}
+                    onClick={handleCloseMenu}
+                    sx={{
+                      "& a": {
+                        color: "#0a0a0a",
+                        textDecoration: "none",
+                        display: "inline-flex",
+                      },
+                    }}
+                  >
+                    <a href={item.url} target="_blank" rel="noreferrer">
+                      <IconLang component={"img"} src={item.icon} />
+                      {item.lang}
+                    </a>
+                  </MenuItem>
+                ))}
+              </Menu>
+            </div>
             <UlCustom >
+
+
               {aboutInfinity.map(item => (
                 <li key={item.label}>
                   <a href={item.link} >
