@@ -1,7 +1,6 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import useResponsive from "../../hooks/useResponsive";
 import { ButtonTitleBox, ApplyButton, AppButton, TypographyOutline } from "./HomeStyles";
-import { TokenPrice, getPrice } from "./TokenPrice";
 
 const Title = [
   'Journey Games Web3',
@@ -17,7 +16,6 @@ export default function TitleMain() {
   const isDesktop = useResponsive("up", "md");
   const isTablet = useResponsive("down", "md");
   const isMobile = useResponsive("down", "sm");
-  TokenPrice();
   return (
     <Box
       sx={{
