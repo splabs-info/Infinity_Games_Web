@@ -1,5 +1,5 @@
 import { toast } from "react-toastify";
-import { AppConfig } from "../setting";
+import { API } from "../setting";
 import { logout } from "../utils/auth";
 import { getAccessToken } from "./auth";
 export const defaultHeaders = {
@@ -28,7 +28,7 @@ export const alertError = (error) => {
 };
 
 function myFetch(method, endpoint, body, successCallback, errorCallback) {
-  let url = AppConfig.API + endpoint;
+  let url = API + endpoint;
 
   body = JSON.stringify(body);
 

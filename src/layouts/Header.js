@@ -4,6 +4,7 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import {
   Avatar,
   Box,
+  CircularProgress,
   Collapse,
   Container,
   Divider,
@@ -24,7 +25,6 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import useResponsive from "../hooks/useResponsive";
-import { AppConfig } from "../setting";
 import Languages from "./Languages";
 import { WhitePaperButton, HeaderBox, IconLang, Navbar, ApplyButton, PriceBox } from "../components/header/HeaderStyles";
 import { Color } from "../constant/styled";
@@ -32,6 +32,7 @@ import { SliderCustom } from "../components/home/HomeStyles";
 import { buyOnSliderSettings, networksSliderSettings } from "../components/home/SliderSettings";
 import axios from "axios";
 import { whitepaper } from "../components/home/Content";
+import { get } from "../utils/api";
 
 const config = [
 
@@ -134,23 +135,23 @@ const subMenus = [
 const buyOns = [
   {
     label: "gate.io",
-    link: "/",
+    link: "https://www.gate.io/vi/trade/ING_USDT",
   },
   {
     label: "phemex",
-    link: "/",
+    link: "https://phemex.com/spot/trade/INGUSDT",
   },
   {
     label: "mexc",
-    link: "/",
+    link: "https://www.mexc.com/exchange/ING_USDT",
   },
   {
     label: "hotbit",
-    link: "/",
+    link: "https://www.hotbit.io/exchange?symbol=ING_USDT",
   },
   {
     label: "huobi",
-    link: "/",
+    link: "https://www.huobi.com/en-us/exchange/ing_usdt",
   },
 
 ];
@@ -163,7 +164,6 @@ export default function Header() {
 
 
   const [changeINGData, setChangeINGData] = useState('');
-  const [priceData, setPriceData] = useState();
 
   const [scrollPositionToggle, setScrollPositionToggle] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
@@ -207,26 +207,18 @@ export default function Header() {
     };
   }, []);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      axios.get(`https://data.gateapi.io/api2/1/marketlist`)
-        .then((getData) => {
-          setPriceData(getData.data.data.find((item) => item.symbol === 'ING'));
-        })
-    }, 1000);
-    return () => clearInterval(timer);
-  }, []);
 
   useEffect(() => {
-    axios.get(`https://data.gateapi.io/api2/1/ticker/ing_usdt`)
-      .then((getData) => {
-        setChangeINGData(getData.data);
-      })
+    get(`/data/ticker`
+      , ((getData) => {
+        setChangeINGData(getData);
+      }))
     const timer = setInterval(() => {
-      axios.get(`https://data.gateapi.io/api2/1/ticker/ing_usdt`)
-        .then((getData) => {
-          setChangeINGData(getData.data);
-        })
+      get(`/data/ticker`
+        , ((getData) => {
+          setChangeINGData(getData);
+          console.log(getData);
+        }))
     }, 20000);
     return () => clearInterval(timer);
   }, []);
@@ -257,11 +249,7 @@ export default function Header() {
               }}
             >
               <Hidden lgDown>
-                {AppConfig?.mainMenus?.map((menu, index) => (
-                  <Link to={menu.link} key={index}>
-                    {library[menu.label]}
-                  </Link>
-                ))}
+
                 {config.map((item, index) => {
                   if (item.link && item.link.indexOf("#") <= -1) {
                     return (
@@ -370,7 +358,7 @@ export default function Header() {
               >
                 <Box>
                   <Typography>ING:</Typography>
-                  <Typography minWidth={100} color={Color.accent}>$ {priceData?.rate}</Typography>
+                  {changeINGData?.last ? <Typography minWidth={100} color={Color.accent}>$ {changeINGData?.last}</Typography> : <CircularProgress size={15} color="primary" />}
                 </Box>
                 <Box sx={{
                   display: "flex",
@@ -378,8 +366,8 @@ export default function Header() {
                   alignItems: 'center',
                 }}>
                   <Typography>Historical change:</Typography>
-                  {changeINGData?.percentChange && <Typography className={changeINGData?.percentChange > 0 ? "Up Change" : "Down Change"}>
-                    {Math.abs(changeINGData?.percentChange)}</Typography>}
+                  {changeINGData?.percentChange ? <Typography className={changeINGData?.percentChange > 0 ? "Up Change" : "Down Change"}>
+                    {Math.abs(changeINGData?.percentChange)}</Typography> : <CircularProgress size={15} color="primary" />}
                 </Box>
                 <Box sx={{
                   display: 'flex',

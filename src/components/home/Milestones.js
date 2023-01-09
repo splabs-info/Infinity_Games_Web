@@ -4,6 +4,7 @@ import {
 import { ImagesAccent, MilestonesBox, MilestonesList, MilestonesTitle, TitleBox, TypographyShadow } from "./HomeStyles";
 import useResponsive from "../../hooks/useResponsive";
 import { milestonesContent } from "./Content";
+import { Color } from "../../constant/styled";
 
 
 
@@ -41,7 +42,7 @@ export default function Milestones() {
         </TitleBox>
         {milestonesContent.map((item, index) => (
           isDesktop ?
-            (<MilestonesBox key={index}>
+            <MilestonesBox key={index}>
               <Box sx={{ width: '40%' }} className='ContentBox'>
                 <Box className='Milestones-Content' >
                   <MilestonesTitle>
@@ -49,7 +50,7 @@ export default function Milestones() {
                   </MilestonesTitle>
                   <MilestonesList>
                     {item.content.map((text, j) => (
-                      <li key={j}> {text}</li>
+                      <li key={j} style={{ color: text.status ? Color.primary : Color.text }}> {text.label}</li>
                     ))}
                   </MilestonesList>
                 </Box></Box>
@@ -57,21 +58,21 @@ export default function Milestones() {
                 <img src="/images/home/line-map.png" alt="" />
               </Box>
               <Box sx={{ width: '40%' }} />
-            </MilestonesBox>)
-            : (
-              <MilestonesBox key={index}>
-                <Box sx={{ width: '100%' }} className='Milestones-Content' >
-                  <MilestonesTitle>
-                    {item.title}
-                  </MilestonesTitle>
-                  <MilestonesList>
-                    {item.content.map((text, j) => (
-                      <li key={j}> {text}</li>
-                    ))}
-                  </MilestonesList>
-                </Box>
-              </MilestonesBox>
-            )
+            </MilestonesBox>
+            :
+            <MilestonesBox key={index}>
+              <Box sx={{ width: '100%' }} className='Milestones-Content' >
+                <MilestonesTitle>
+                  {item.title}
+                </MilestonesTitle>
+                <MilestonesList>
+                  {item.content.map((text, j) => (
+                    <li key={j} style={{ color: text.status ? Color.primary : Color.text }}> {text.label}</li>
+                  ))}
+                </MilestonesList>
+              </Box>
+            </MilestonesBox>
+
         ))}
       </Container>
     </Box>
