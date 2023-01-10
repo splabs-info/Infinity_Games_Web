@@ -188,8 +188,9 @@ export default function Footer() {
           >
             <FooterTitle>
               {library.key_10}
-            </FooterTitle><div>
-              <WhitePaperButton onClick={handleClick}>
+            </FooterTitle>
+            <UlCustom >
+              <li>  <WhitePaperButton onClick={handleClick}>
                 {library.WHITEPAPER}&nbsp;&nbsp;
                 <span
                   style={{
@@ -200,35 +201,7 @@ export default function Footer() {
                     borderTop: "6px solid #fee8e2",
                   }}
                 ></span>
-              </WhitePaperButton>
-              <Menu
-                id="basic-menu"
-                anchorEl={anchorEl2}
-                open={open}
-                onClose={handleCloseMenu}
-              >
-                {whitepaper.map((item) => (
-                  <MenuItem
-                    key={item.url}
-                    onClick={handleCloseMenu}
-                    sx={{
-                      "& a": {
-                        color: "#0a0a0a",
-                        textDecoration: "none",
-                        display: "inline-flex",
-                      },
-                    }}
-                  >
-                    <a href={item.url} target="_blank" rel="noreferrer">
-                      <IconLang component={"img"} src={item.icon} />
-                      {item.lang}
-                    </a>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </div>
-            <UlCustom >
-
+              </WhitePaperButton></li>
 
               {aboutInfinity.map(item => (
                 <li key={item.label}>
@@ -262,6 +235,33 @@ export default function Footer() {
                 </li>
               ))}
             </UlCustom>
+            <div>
+
+              <Menu
+                anchorEl={anchorEl2}
+                open={open}
+                onClose={handleCloseMenu}
+              >
+                {whitepaper.map((item) => (
+                  <MenuItem
+                    key={item.url}
+                    onClick={handleCloseMenu}
+                    sx={{
+                      "& a": {
+                        color: "#0a0a0a",
+                        textDecoration: "none",
+                        display: "inline-flex",
+                      },
+                    }}
+                  >
+                    <a href={item.url} target="_blank" rel="noreferrer">
+                      <IconLang component={"img"} src={item.icon} />
+                      {item.lang}
+                    </a>
+                  </MenuItem>
+                ))}
+              </Menu>
+            </div>
           </Grid>
 
           <Grid
@@ -288,11 +288,13 @@ export default function Footer() {
 
         </Grid>
       </Container>
+
       <EndBox>
         <Typography>
           Copyright © 2022 SPLabs Co. LTD | All Rights Reserved
         </Typography>
       </EndBox>
+
     </FooterBox>
   );
 }

@@ -217,7 +217,6 @@ export default function Header() {
       get(`/data/ticker`
         , ((getData) => {
           setChangeINGData(getData);
-          console.log(getData);
         }))
     }, 20000);
     return () => clearInterval(timer);
