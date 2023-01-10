@@ -29,7 +29,7 @@ export const alertError = (error) => {
 
 function myFetch(method, endpoint, body, successCallback, errorCallback) {
   let url = API + endpoint;
-
+  console.log(API);
   body = JSON.stringify(body);
 
   let headers = defaultHeaders;

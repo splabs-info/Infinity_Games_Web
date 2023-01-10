@@ -9,9 +9,9 @@ export const image_url =
 export const explorer_url = "https://bscscan.com/tx";
 
 export const hostname = window.location.hostname.replace("www.", "");
-
+// console.log(hostname);
 const configs = {
-  localhost: develop,
+  "localhost": develop,
   "infinity-games.feliciastation.com": develop,
 };
 export const config = configs[hostname] ? configs[hostname] : production;
