@@ -203,7 +203,6 @@ export default function Footer() {
                 ></span>
               </WhitePaperButton> */}
               <UlCustom >
-                <li></li>
                 {aboutInfinity.map(item => (
                   <li key={item.label}>
                     <a href={item.link} >
