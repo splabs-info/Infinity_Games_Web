@@ -27,40 +27,44 @@ export default function Signup() {
   };
 
   const ApplySchema = Yup.object().shape({
-    // studioName: Yup.string().required('Studio Name is required'),
-    // email: Yup.string().email('Invalid email').required('Email is required'),
-    // description: Yup.string().required('Description is required'),
+    studioName: Yup.string().required('Studio Name is required'),
+    email: Yup.string().email('Invalid email').required('Email is required'),
+    description: Yup.string().required('Description is required'),
   });
 
   const _handleApply = (params) => {
     let submitParams = {
       studioName: params.studioName,
-      website: params.website,
+      website: params.website ? params.website : '',
       email: params.email,
       description: params.description,
     };
-    // toast.success('Successful Apply');
     post(
       GeneralPoint.ApplyForm,
       submitParams,
       () => {
         toast.success('Successful Apply');
         setIsSubmitting(false);
-        handleResetInput();
+        formik.setValues({
+          studioName: "",
+          website: "",
+          email: "",
+          description: ""
+        })
+        setTimeout(() => {
+          formik.setErrors({
+            studioName: "",
+            website: "",
+            email: "",
+            description: ""
+          })
+        }, 3);
       },
       (error) => {
         toast.error(error)
         setIsSubmitting(false);
       }
     );
-  };
-  const handleResetInput = () => {
-    formik.setValues({
-      studioName: "",
-      website: "",
-      email: "",
-      description: ""
-    });
   };
   const formik = useFormik({
     initialValues: defaultValues,
@@ -70,6 +74,7 @@ export default function Signup() {
       _handleApply(formik.values);
     },
   });
+
 
   const { errors, touched, handleSubmit, getFieldProps } = formik;
 
