@@ -1,17 +1,17 @@
 
 export const buyOnSliderSettings = {
   dots: false,
-  infinite: true,
-  speed: 700,
   slidesToShow: 1,
   slidesToScroll: 1,
-  autoplaySpeed: 3000,
-  autoplay: true,
-  arrows: false,
+  infinite: true,
+  speed: 700,
   vertical: true,
   verticalSwiping: true,
   adaptiveHeight: true,
   variableHeight: false,
+  autoplaySpeed: 3000,
+  autoplay: true,
+  arrows: false,
 };
 
 export const networksSliderSettings = {

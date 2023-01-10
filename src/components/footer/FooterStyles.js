@@ -92,7 +92,7 @@ export const MenuCustom = styled(Menu)(() => ({
     }
 }));
 
-export const WhitePaperButton = styled(Button)(() => ({
+export const WhitePaperButton = styled('a')(() => ({
     color: "white",
     lineHeight: "1",
     marginRight: "2rem",

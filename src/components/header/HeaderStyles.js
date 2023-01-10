@@ -39,8 +39,7 @@ export const HeaderBox = styled(Box)(({ theme }) => ({
 export const PriceBox = styled(Box)(({ theme }) => ({
     display: "flex",
     alignItems: "center",
-    width: "100vw",
-    zIndex: "10",
+    width: '100vw',
     paddingLeft: '0.75rem',
     borderTop: '1px solid rgba(71,193,190,0.1)',
     color: Color.text,

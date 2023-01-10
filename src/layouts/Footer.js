@@ -97,15 +97,15 @@ export default function Footer() {
   const isMobile = useResponsive("down", "sm");
   const isTablet = useResponsive("down", "md");
 
-  const [anchorEl2, setAnchorEl2] = useState(null);
-  const open = Boolean(anchorEl2);
+  // const [anchorEl2, setAnchorEl2] = useState(null);
+  // const open = Boolean(anchorEl2);
 
-  const handleCloseMenu = () => {
-    setAnchorEl2(null);
-  };
-  const handleClick = (event) => {
-    setAnchorEl2(event.currentTarget);
-  };
+  // const handleCloseMenu = () => {
+  //   setAnchorEl2(null);
+  // };
+  // const handleClick = (event) => {
+  //   setAnchorEl2(event.currentTarget);
+  // };
 
   useEffect(() => {
     dispatch(_changeLanguage(localStorage.getItem("lang")));
@@ -113,84 +113,84 @@ export default function Footer() {
 
 
   return (
-    <FooterBox id='contact' sx={{
-      backgroundSize: isMobile && "cover",
-      backgroundPosition: isMobile && "center",
-    }}>
-      <Container maxWidth={"xl"}>
-        <Grid container>
-          <Grid
-            item
-            xs={12}
-            md={4}
-            textAlign={isTablet && "center"}
-          >
-            <Box component='a' href="/"
-              sx={{
-                display: isTablet && 'flex',
-                justifyContent: isTablet && 'center',
-                '&:hover': {
-                  borderBottom: '0px!important'
-                }
+    <>
+      <FooterBox id='contact' sx={{
+        backgroundSize: isMobile && "cover",
+        backgroundPosition: isMobile && "center",
+      }}>
+        <Container maxWidth={"xl"}>
+          <Grid container>
+            <Grid
+              item
+              xs={12}
+              md={4}
+              textAlign={isTablet && "center"}
+            >
+              <Box component='a' href="/"
+                sx={{
+                  display: isTablet && 'flex',
+                  justifyContent: isTablet && 'center',
+                  '&:hover': {
+                    borderBottom: '0px!important'
+                  }
+                }}>
+                <Box component={'img'} src="/logo.png" width={isMobile ? 150 : '100%'} maxWidth={200} />
+              </Box>
+
+              <Typography variant="body1" sx={{
+                fontSize: ".9rem",
+                textAlign: isMobile && 'center',
+                paddingRight: !isMobile && '3rem',
+                padding: isMobile && '0 10%',
+                margin: '2rem 0',
               }}>
-              <Box component={'img'} src="/logo.png" width={isMobile ? 150 : '100%'} maxWidth={200} />
-            </Box>
+                Infinity Angel is an 'AOS-style real-time online
+                battle arena' High quality free-to-play games
+                with the added advantage of creating earning
+                opportunities and blockchain technology.
+              </Typography>
+              <SocialBox>
+                {socials.map((item, index) => (
+                  <Box key={index} component='a' href={item.link} target="_blank">
+                    <Box component='img' src={item.src} />
+                  </Box>
+                ))}
+              </SocialBox>
+            </Grid>
+            <Grid
+              item
+              xs={6}
+              sm={3}
+              md={2}
+              mt={isTablet && 3}
+              textAlign={isMobile && "center"}
+            >
+              <FooterTitle>
+                {library.key_9}
+              </FooterTitle>
+              <UlCustom >
+                <li >
+                  <a href='mailto:info@infinitygames.io' target="_blank" rel="noreferrer">
+                    info@infinitygames.io
+                  </a>
+                </li>
+              </UlCustom>
+            </Grid>
 
-            <Typography variant="body1" sx={{
-              fontSize: ".9rem",
-              textAlign: isMobile && 'center',
-              paddingRight: !isMobile && '3rem',
-              padding: isMobile && '0 10%',
-              margin: '2rem 0',
-            }}>
-              Infinity Angel is an 'AOS-style real-time online
-              battle arena' High quality free-to-play games
-              with the added advantage of creating earning
-              opportunities and blockchain technology.
-            </Typography>
-            <SocialBox>
-              {socials.map((item, index) => (
-                <Box key={index} component='a' href={item.link} target="_blank">
-                  <Box component='img' src={item.src} />
-                </Box>
-              ))}
-            </SocialBox>
-          </Grid>
-          <Grid
-            item
-            xs={6}
-            sm={3}
-            md={2}
-            mt={isTablet && 3}
-            textAlign={isMobile && "center"}
-          >
-            <FooterTitle>
-              {library.key_9}
-            </FooterTitle>
-            <UlCustom >
-              <li >
-                <a href='mailto:info@infinitygames.io' target="_blank" rel="noreferrer">
-                  info@infinitygames.io
-                </a>
-              </li>
-            </UlCustom>
-          </Grid>
-
-          <Grid
-            item
-            xs={6}
-            sm={3}
-            md={2}
-            mt={isTablet && 3}
-            textAlign={isMobile && 'center'}
-            pr={isMobile && 2}
-            sx={{ height: "100%", wordBreak: "break-all" }}
-          >
-            <FooterTitle>
-              {library.key_10}
-            </FooterTitle>
-            <UlCustom >
-              <li>  <WhitePaperButton onClick={handleClick}>
+            <Grid
+              item
+              xs={6}
+              sm={3}
+              md={2}
+              mt={isTablet && 3}
+              textAlign={isMobile && 'center'}
+              pr={isMobile && 2}
+              sx={{ height: "100%", wordBreak: "break-all" }}
+            >
+              <FooterTitle>
+                {library.key_10}
+              </FooterTitle>
+              {/* <WhitePaperButton onClick={handleClick}>
                 {library.WHITEPAPER}&nbsp;&nbsp;
                 <span
                   style={{
@@ -201,100 +201,103 @@ export default function Footer() {
                     borderTop: "6px solid #fee8e2",
                   }}
                 ></span>
-              </WhitePaperButton></li>
-
-              {aboutInfinity.map(item => (
-                <li key={item.label}>
-                  <a href={item.link} >
-                    {library[item.label]}
-                  </a>
-                </li>
-              ))}
-            </UlCustom>
-          </Grid>
-
-          <Grid
-            item
-            xs={6}
-            md={2}
-            sm={3}
-            mt={isTablet && 3}
-            pl={isMobile && 2}
-            sx={{ height: "100%", textAlign: isMobile ? 'center' : "start", wordBreak: "break-all" }}
-          >
-            <FooterTitle>
-              {library.key_15}
-            </FooterTitle>
-
-            <UlCustom >
-              {joinInfinity.map(item => (
-                <li key={item.label} >
-                  <a href={item.link} target="_blank" rel="noreferrer">
-                    {library[item.label]}
-                  </a>
-                </li>
-              ))}
-            </UlCustom>
-            <div>
-
-              <Menu
-                anchorEl={anchorEl2}
-                open={open}
-                onClose={handleCloseMenu}
-              >
-                {whitepaper.map((item) => (
-                  <MenuItem
-                    key={item.url}
-                    onClick={handleCloseMenu}
-                    sx={{
-                      "& a": {
-                        color: "#0a0a0a",
-                        textDecoration: "none",
-                        display: "inline-flex",
-                      },
-                    }}
-                  >
-                    <a href={item.url} target="_blank" rel="noreferrer">
-                      <IconLang component={"img"} src={item.icon} />
-                      {item.lang}
+              </WhitePaperButton> */}
+              <UlCustom >
+                <li></li>
+                {aboutInfinity.map(item => (
+                  <li key={item.label}>
+                    <a href={item.link} >
+                      {library[item.label]}
                     </a>
-                  </MenuItem>
+                  </li>
                 ))}
-              </Menu>
-            </div>
+              </UlCustom>
+            </Grid>
+
+            <Grid
+              item
+              xs={6}
+              md={2}
+              sm={3}
+              mt={isTablet && 3}
+              pl={isMobile && 2}
+              sx={{ height: "100%", textAlign: isMobile ? 'center' : "start", wordBreak: "break-all" }}
+            >
+              <FooterTitle>
+                {library.key_15}
+              </FooterTitle>
+
+              <UlCustom >
+                {joinInfinity.map(item => (
+                  <li key={item.label} >
+                    <a href={item.link} target="_blank" rel="noreferrer">
+                      {library[item.label]}
+                    </a>
+                  </li>
+                ))}
+              </UlCustom>
+
+            </Grid>
+
+            <Grid
+              item
+              xs={6}
+              md={2}
+              sm={3}
+              mt={isTablet && 3}
+              textAlign={useResponsive("down", "md") && "center"}
+            >
+              <FooterTitle>
+                {library.key_20}
+              </FooterTitle>
+              <UlCustom >
+                {socials.map(item => (
+                  <li key={item.label}>
+                    <a href={item.link} target="_blank" rel="noreferrer">
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </UlCustom>
+            </Grid>
+
           </Grid>
+        </Container>
 
-          <Grid
-            item
-            xs={6}
-            md={2}
-            sm={3}
-            mt={isTablet && 3}
-            textAlign={useResponsive("down", "md") && "center"}
-          >
-            <FooterTitle>
-              {library.key_20}
-            </FooterTitle>
-            <UlCustom >
-              {socials.map(item => (
-                <li key={item.label}>
-                  <a href={item.link} target="_blank" rel="noreferrer">
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </UlCustom>
-          </Grid>
+        <EndBox>
+          <Typography>
+            Copyright © 2022 SPLabs Co. LTD | All Rights Reserved
+          </Typography>
 
-        </Grid>
-      </Container>
+        </EndBox>
 
-      <EndBox>
-        <Typography>
-          Copyright © 2022 SPLabs Co. LTD | All Rights Reserved
-        </Typography>
-      </EndBox>
-
-    </FooterBox>
+      </FooterBox>
+      {/* <Box>
+        <Menu
+          anchorEl={anchorEl2}
+          open={open}
+          onClose={handleCloseMenu}
+        >
+          {whitepaper.map((item) => (
+            <MenuItem
+              key={item.url}
+              onClick={handleCloseMenu}
+              sx={{
+                "& a": {
+                  color: "#0a0a0a",
+                  textDecoration: "none",
+                  display: "inline-flex",
+                },
+              }}
+            >
+              <a href={item.url} target="_blank" rel="noreferrer">
+                <IconLang component={"img"} src={item.icon} />
+                {item.lang}
+              </a>
+            </MenuItem>
+          ))}
+        </Menu>
+      </Box> */}
+    </>
   );
 }

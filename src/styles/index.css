@@ -25,3 +25,23 @@ a {
 .imgGames {
   animation: scale 2s linear infinite;
 }
+
+.Toastify__toast {
+  background-image: url(/public/images/background/bg-1.jpg);
+  position: relative;
+  border-radius: 16px;
+}
+
+.Toastify__toast::before {
+  background-image: url(/public/images/background/bg-1.jpg);
+  content: '';
+  position: absolute;
+  inset: 0px;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(90.22deg, #00FFF9, #47C1BE);
+  -webkit-mask:
+    linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 0px) content-box content-box, linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 0px);
+  -webkit-mask-composite: xor;
+  z-index: -1;
+}

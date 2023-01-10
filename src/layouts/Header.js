@@ -51,61 +51,19 @@ const subMenus = [
     items: [
       {
         label: "English",
-        link: "/",
+        link: "https://infinityangel.gitbook.io/infinity-games-2.0/",
       },
       {
         label: "Korean",
-        link: "/",
+        link: "https://infinityangel.gitbook.io/korea-infinity-games-2.0/",
       },
       {
         label: "Vietnamese",
-        link: "/",
+        link: "https://infinityangel.gitbook.io/vietnam-infinity-games-2.0/",
       },
       {
         label: "Japanese",
-        link: "/",
-      },
-    ],
-  },
-  {
-    label: "LITEPAPER",
-    items: [
-      {
-        label: "English",
-        link: "/",
-      },
-      {
-        label: "Korean",
-        link: "/",
-      },
-      {
-        label: "Vietnamese",
-        link: "/",
-      },
-      {
-        label: "Japanese",
-        link: "/",
-      },
-    ],
-  },
-  {
-    label: "PITCHDECK",
-    items: [
-      {
-        label: "English",
-        link: "/",
-      },
-      {
-        label: "Korean",
-        link: "/",
-      },
-      {
-        label: "Vietnamese",
-        link: "/",
-      },
-      {
-        label: "Japanese",
-        link: "/",
+        link: "https://infinityangel.gitbook.io/japan-infinity-games-2.0/",
       },
     ],
   },
@@ -113,20 +71,24 @@ const subMenus = [
     label: "INFORMATION",
     items: [
       {
-        label: "Discord",
-        link: ""
+        link: "https://discord.gg/f4FEgmYTQF ",
+        label: 'Discord',
       },
       {
-        label: "Telegram",
-        link: ""
+        link: "https://t.me/infinityangel_global",
+        label: 'Telegram',
       },
       {
-        label: "Twitter",
-        link: ""
+        link: "https://twitter.com/InfinityAngelio",
+        label: 'Twitter',
       },
       {
-        label: "Medium",
-        link: ""
+        link: "https://www.facebook.com/InfinityAngel.io/  ",
+        label: 'Facebook',
+      },
+      {
+        link: "https://www.youtube.com/channel/UCNPxb1l4SBWFTn106zjs4tg",
+        label: 'Youtube',
       },
     ],
   },
@@ -165,17 +127,16 @@ export default function Header() {
 
   const [changeINGData, setChangeINGData] = useState('');
 
-  const [scrollPositionToggle, setScrollPositionToggle] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
-  // const [anchorEl, setAnchorEl] = useState(null);
-  // const open = Boolean(anchorEl);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
 
-  // const handleCloseMenu = () => {
-  //   setAnchorEl(null);
-  // };
-  // const handleClick = (event) => {
-  //   setAnchorEl(event.currentTarget);
-  // };
+  const handleCloseMenu = () => {
+    setAnchorEl(null);
+  };
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
 
   const scroll = (id) => {
     const section = document.querySelector(`${id}`);
@@ -190,6 +151,7 @@ export default function Header() {
     setShowSidebar(false);
   };
 
+  const [scrollPositionToggle, setScrollPositionToggle] = useState(false);
   const handleScroll = () => {
     const position = window.pageYOffset;
     if (position > 75) {
@@ -273,49 +235,6 @@ export default function Header() {
                     );
                 })}
 
-                {/*   <div>
-                  <WhitePaperButton onClick={handleClick}>
-                    {library.WHITEPAPER}&nbsp;&nbsp;
-                    <span
-                      style={{
-                        width: 0,
-                        height: 0,
-                        borderLeft: "6px solid transparent",
-                        borderRight: "6px solid transparent",
-                        borderTop: "6px solid #fee8e2",
-                      }}
-                    ></span>
-                  </WhitePaperButton>
-                  <Menu
-                    id="basic-menu"
-                    anchorEl={anchorEl}
-                    open={open}
-                    onClose={handleCloseMenu}
-                    MenuListProps={{
-                      "aria-labelledby": "basic-button",
-                    }}
-                  >
-                    {whitepaper.map((item) => (
-                      <MenuItem
-                        key={item.url}
-                        onClick={handleCloseMenu}
-                        sx={{
-                          "& a": {
-                            color: "#0a0a0a",
-                            textDecoration: "none",
-                            display: "inline-flex",
-                          },
-                        }}
-                      >
-                        <a href={item.url} target="_blank" rel="noreferrer">
-                          <IconLang component={"img"} src={item.icon} />
-                          {item.lang}
-                        </a>
-                      </MenuItem>
-                    ))}
-                  </Menu>
-                </div> */}
-
                 <ApplyButton>
                   <img src="/images/icon/icon-wallet.png" alt="" />&nbsp;&nbsp; {library.Connect_Wallet}
                 </ApplyButton>
@@ -344,76 +263,125 @@ export default function Header() {
             </Box>
           </Navbar>
         </Container>
-        {!scrollPositionToggle &&
-          <Hidden smDown>
-            <PriceBox spacing={3}>
-              <Container
-                maxWidth={"xl"}
-                sx={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: 'center',
-                }}
-              >
-                <Box>
-                  <Typography>ING:</Typography>
-                  {changeINGData?.last ? <Typography minWidth={100} color={Color.accent}>$ {changeINGData?.last}</Typography> : <CircularProgress size={15} color="primary" />}
-                </Box>
-                <Box sx={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: 'center',
-                }}>
-                  <Typography>Historical change:</Typography>
-                  {changeINGData?.percentChange ? <Typography className={changeINGData?.percentChange > 0 ? "Up Change" : "Down Change"}>
-                    {Math.abs(changeINGData?.percentChange)}</Typography> : <CircularProgress size={15} color="primary" />}
-                </Box>
-                <Box sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  flexDirection: 'row'
-                }}>
-                  <Typography color={Color.text} ml={2}> Buy On </Typography>
-                  <SliderCustom {...buyOnSliderSettings}>
-                    {buyOns.map((item, index) =>
-                      <Stack
-                        flexDirection={'row'}
-                        alignItems={'center'}
-                        spacing={2}
-                        key={index}
-                        display={'flex!important'}>
-                        <a
-                          href={item.link}
-                          target="_blank"
-                          rel="noreferrer"
-                          style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            flexDirection: 'row'
-                          }}
-                        >
-                          <Box component={'img'}
-                            src={`./images/icon/icon-${item.label}.png`}
-                            alt={item.label}
-                            mr={'8px!important'}
-                          />
-                          <Typography textTransform={'capitalize'}>{item.label}</Typography>
-                          <Box component={'img'}
-                            src={`./images/icon/icon-arrow-up.png`}
-                            alt={item.label}
-                          />
+        <Hidden smDown>
+          <PriceBox spacing={3} sx={{ display: scrollPositionToggle ? 'none' : 'block' }}>
+            <Container
+              maxWidth={"xl"}
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: 'center',
+                position: 'relative'
+              }}
+            >
+              <Box>
+                <Typography>ING:</Typography>
+                <Typography minWidth={100} color={Color.accent}>
+                  {changeINGData?.last ? <>$ {changeINGData?.last}</> : <CircularProgress size={15} color="primary" />}
+                </Typography>
+              </Box>
+              <Box sx={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: 'center',
+              }}>
+                <Typography>Historical change:</Typography>
+                <Typography className={changeINGData?.percentChange > 0 ? "Up Change" : "Down Change"} minWidth={70}>
+                  {changeINGData?.percentChange ? Math.abs(changeINGData?.percentChange) : <CircularProgress size={15} color="primary" />}
+                </Typography>
+              </Box>
+              <Box sx={{
+                display: 'flex',
+                alignItems: 'center',
+                flexDirection: 'row'
+              }}>
+                <Typography color={Color.text} ml={2}> Buy On </Typography>
+                <SliderCustom {...buyOnSliderSettings} sx={{ maxWidth: '100px' }}>
+                  {buyOns.map((item, index) =>
+                    <Stack
+                      flexDirection={'row'}
+                      alignItems={'center'}
+                      spacing={2}
+                      key={index}
+                      display={'flex!important'}>
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          flexDirection: 'row'
+                        }}
+                      >
+                        <Box component={'img'}
+                          src={`./images/icon/icon-${item.label}.png`}
+                          alt={item.label}
+                          mr={'8px!important'}
+                        />
+                        <Typography textTransform={'capitalize'}>{item.label}</Typography>
+                        <Box component={'img'}
+                          src={`./images/icon/icon-arrow-up.png`}
+                          alt={item.label}
+                        />
 
-                        </a>
-                      </Stack>
-                    )}
-                  </SliderCustom>
+                      </a>
+                    </Stack>
+                  )}
+                </SliderCustom>
+              </Box>
+              <Hidden lgDown>
+                <Box sx={{
+                  position: 'absolute',
+                  right: '2rem'
+                }}>
+                  <WhitePaperButton onClick={handleClick}>
+                    {library.WHITEPAPER}&nbsp;&nbsp;
+                    <span
+                      style={{
+                        width: 0,
+                        height: 0,
+                        borderLeft: "6px solid transparent",
+                        borderRight: "6px solid transparent",
+                        borderTop: "6px solid #fee8e2",
+                      }}
+                    ></span>
+                  </WhitePaperButton>
                 </Box>
-              </Container>
-            </PriceBox>
-          </Hidden>
-        }
+              </Hidden>
+            </Container>
+          </PriceBox>
+        </Hidden>
+
       </HeaderBox>
-
+      <Menu
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleCloseMenu}
+        MenuListProps={{
+          "aria-labelledby": "basic-button",
+        }}
+      >
+        {whitepaper.map((item) => (
+          <MenuItem
+            key={item.url}
+            onClick={handleCloseMenu}
+            sx={{
+              "& a": {
+                color: "#0a0a0a",
+                textDecoration: "none",
+                display: "inline-flex",
+              },
+            }}
+          >
+            <a href={item.url} target="_blank" rel="noreferrer">
+              <IconLang component={"img"} src={item.icon} />
+              {item.lang}
+            </a>
+          </MenuItem>
+        ))}
+      </Menu>
       <Drawer open={showSidebar} anchor="right" onClose={handleClose}
         sx={{
           "& .MuiPaper-root": {
@@ -481,13 +449,13 @@ export default function Header() {
                 );
               })}
             </Hidden>
-            {/*  <Divider />
-            
+            <Divider />
+
             {subMenus.map((menu, index) => (
               <SubMenu menu={menu} key={index} library={library} />
-            ))} 
+            ))}
 
-            <Divider />*/}
+            <Divider />
           </List>
         </Box>
       </Drawer>
