@@ -144,10 +144,7 @@ export default function Footer() {
                 padding: isMobile && '0 10%',
                 margin: '2rem 0',
               }}>
-                Infinity Angel is an 'AOS-style real-time online
-                battle arena' High quality free-to-play games
-                with the added advantage of creating earning
-                opportunities and blockchain technology.
+                Infinity Games is a multi-game platform that supports various blockchains and is a game studio that can dramatically evolve Web 2.0 games into Web 3.0 games.
               </Typography>
               <SocialBox>
                 {socials.map((item, index) => (
