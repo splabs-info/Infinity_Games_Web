@@ -319,7 +319,11 @@ export default function Header() {
                           alt={item.label}
                           mr={'8px!important'}
                         />
-                        <Typography textTransform={'capitalize'}>{item.label}</Typography>
+                        {item.label === 'gate.io' ?
+                          <Typography>Gate.io</Typography>
+                          :
+                          <Typography textTransform={'capitalize'}>{item.label}</Typography>}
+
                         <Box component={'img'}
                           src={`./images/icon/icon-arrow-up.png`}
                           alt={item.label}
