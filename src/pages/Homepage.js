@@ -1,17 +1,11 @@
 import React from "react";
-import {
-  TitleMain,
-  Partner,
-  Networks,
-  GrowGame,
-  Milestones,
-  Ecosystem,
-  Signup,
-} from "../components/home";
 import Page from "../components/common/Page";
+import {
+  Ecosystem, GrowGame,
+  Milestones, MiniGames, Networks, Partner, Signup, TitleMain
+} from "../components/home";
 
 export default function Homepage() {
-
   return (
     <Page title="Home">
       <TitleMain />
@@ -20,6 +14,7 @@ export default function Homepage() {
       <Milestones />
       <Partner />
       <Ecosystem />
+      <MiniGames />
       <Signup />
     </Page>
   );
