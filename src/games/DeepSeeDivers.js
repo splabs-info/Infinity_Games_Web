@@ -1,10 +1,7 @@
 import React from "react";
 
-import html from "./deepSeaDivers/index.html";
-
-
 export default function DeepSeaDivers() {
   return (
-    <div dangerouslySetInnerHTML={{__html: html}} />
+    <iframe src="/games/deep-sea-divers/inde∏x.html" frameborder="0"></iframe>
   );
 }
