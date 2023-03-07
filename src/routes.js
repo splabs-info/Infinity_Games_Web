@@ -1,6 +1,6 @@
+import DeepSeaDivers from 'games/DeepSeeDivers';
 import React, { Suspense } from 'react';
 import { Navigate, useRoutes } from 'react-router-dom';
-import DeepSeaDivers from './games/DeepSeaDivers';
 import ClientLayout from './layouts';
 import ComingSoon from './pages/ComingSoon';
 import Homepage from './pages/Homepage';
