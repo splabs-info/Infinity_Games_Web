@@ -9,13 +9,10 @@ import DeepSeaDivers from "./games/DeepSeeDivers";
 
 export default function Router() {
   return useRoutes([
-
     {
       path: "/",
       element: <ClientLayout />,
-      children: [
-        { path: "/", element: <Homepage /> },
-      ],
+      children: [{ path: "/", element: <Homepage /> }],
     },
     { path: "games/deep-sea-divers", element: <DeepSeaDivers /> },
     { path: "404", element: <NotFound /> },
