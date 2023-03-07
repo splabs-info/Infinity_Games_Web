@@ -17,7 +17,7 @@ export const en = {
   key_5: "Node NFT",
   key_6: "Staking",
   key_7: "Governance",
-
+  key_8: "Mini games",
   key_9: "Contact",
 
 
