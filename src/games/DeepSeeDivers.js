@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function DeepSeaDiver() {
+export default function DeepSeaDivers() {
   return (
     <iframe
       src="/games/deep-sea-divers/index.html"
