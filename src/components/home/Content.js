@@ -198,4 +198,12 @@ export const miniGames = [
       "This is not an Endless Runner game but an Endless Divers game. Avoid all the enemies and collect coins as many as possible. How long and how far you can survive ? Beware of the angry big fish, this ugly fat fish will chase and catch you.",
     url: "https://deep-sea-diver-git-main-luuphuc6297.vercel.app/",
   },
+  {
+    id: "creepy-flappy",
+    src: "/images/creepy-flappy.png",
+    name: "Creepy Flappy",
+    description:
+      "Game where a strange bird must fly without hitting the blocks. Try to get as far as possible. Enjoy atmospheric sounds and graphics.",
+    url: "",
+  },
 ];

@@ -53,15 +53,18 @@ const MiniGames = () => {
         alignItems={!isDesktop && "center"}
       >
         {miniGames.map((item, index) => (
-          <a href={item.url} target="_blank" rel="noreferrer">
-            <MultiChainBox key={index} sx={{ background: item.background }}>
-              <img src={item.src} alt={item.name} height={280} />
+          <MultiChainBox key={index} sx={{ background: item.background }}>
+            <a href={item.url} target="_blank" rel="noreferrer">
+              <img src={item.src} alt={item.name} height={220} />
               <MultiChainTitle variant="h5">{item.name}</MultiChainTitle>
-              <Box component={"p"} sx={{ textAlign: "center" }}>
+              <Box
+                component={"p"}
+                sx={{ textAlign: "center", color: "#7780A1" }}
+              >
                 {item.description}
               </Box>
-            </MultiChainBox>
-          </a>
+            </a>
+          </MultiChainBox>
         ))}
       </Box>
     </Container>
