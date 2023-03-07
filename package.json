@@ -4,10 +4,8 @@
   "version": "1.5.0",
   "private": true,
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "set -a && source .env && webpack serve --mode development",
+    "build": "webpack --mode production"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
@@ -24,6 +22,7 @@
     "axios": "^1.2.2",
     "buffer": "^6.0.3",
     "change-case": "^4.1.2",
+    "copy-webpack-plugin": "^11.0.0",
     "crypto-js": "^4.1.1",
     "date-fns": "^2.28.0",
     "ethers": "^5.7.2",
@@ -45,6 +44,7 @@
     "react-toastify": "^9.1.1",
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.1",
+    "sass-loader": "^13.2.0",
     "simplebar": "^5.3.8",
     "simplebar-react": "^2.4.1",
     "wagmi": "^0.12.0",
@@ -69,5 +69,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "file-loader": "^6.2.0",
+    "html-loader": "^4.2.0",
+    "webpack-cli": "^5.0.1"
   }
 }
