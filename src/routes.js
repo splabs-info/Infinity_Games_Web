@@ -1,3 +1,4 @@
+import DeepSeaDivers from 'games/DeepSeeDivers';
 import React, { Suspense } from 'react';
 import { Navigate, useRoutes } from 'react-router-dom';
 import DeepSeaDivers from './games/DeepSeeDivers';
