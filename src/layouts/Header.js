@@ -17,7 +17,7 @@ import {
     Menu,
     MenuItem,
     Stack,
-    Typography
+    Typography,
 } from '@mui/material';
 import { IconMenu2 } from '@tabler/icons';
 import { WalletDrawer } from 'components/drawer';
@@ -27,7 +27,7 @@ import {
     IconLang,
     Navbar,
     PriceBox,
-    WhitePaperButton
+    WhitePaperButton,
 } from 'components/header/HeaderStyles';
 import { whitepaper } from 'components/home/Content';
 import { SliderCustom } from 'components/home/HomeStyles';
@@ -150,6 +150,9 @@ export default function Header() {
         section?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
 
+    const handleOpenDrawer = () => setOpenWalletDrawer(true);
+
+    console.log('open', open)
     const handleOpen = () => {
         setShowSidebar(true);
     };
@@ -243,7 +246,7 @@ export default function Header() {
                                         );
                                 })}
 
-                                <ApplyButton>
+                                <ApplyButton onClick={handleOpenDrawer}>
                                     <img src="/images/icon/icon-wallet.png" alt="" />
                                     &nbsp;&nbsp; {library.Connect_Wallet}
                                 </ApplyButton>
