@@ -1,4 +1,5 @@
 import { Box, Button, Grid, Typography } from '@mui/material';
+import { GradientBox } from 'components/gradient-box/DefaultGradient';
 import { AppButton, SliderCustom, VideoBox } from 'components/home/HomeStyles';
 import { ecosystemAngleSliderSettings } from 'components/home/SliderSettings';
 import useResponsive from 'hooks/useResponsive';
@@ -13,17 +14,59 @@ export const MiniGamesCard = ({ background, name, status, description, url }) =>
         switch (status) {
             case 'ACTIVE':
                 return (
-                    <AppButton onClick={() => navigate(url)} sx={{ width: '100%', height: 40, fontSize: 16 }}>
-                        <img alt="infinity" src="/images/icon/icon-rocket.png" />
-                        &nbsp;&nbsp;Play
-                    </AppButton>
+                    <Box sx={{ display: 'flex', justifyContent: 'left', width: '100%' }}>
+                        <GradientBox
+                            sx={{
+                                width: '100%',
+                                marginRight: 3,
+
+                                borderRadius: '8px',
+                                textAlign: 'center',
+                                alignItems: 'center',
+                                display: 'flex',
+                                justifyContent: 'center',
+                                fontWeight: 'bold',
+                            }}
+                        >
+                            {status}
+                        </GradientBox>
+
+                        <AppButton
+                            onClick={() => navigate(url)}
+                            sx={{ width: '100%', height: 48, fontSize: 16 }}
+                        >
+                            <img alt="infinity" src="/images/icon/icon-rocket.png" />
+                            &nbsp;&nbsp;Play
+                        </AppButton>
+                    </Box>
                 );
             default:
                 return (
-                    <Button disabled sx={{ width: '100%' }} variant="contained">
-                        <img alt="infinity" src="/images/icon/icon-rocket.png" />
-                        &nbsp;&nbsp;Play
-                    </Button>
+                    <Box sx={{ display: 'flex', justifyContent: 'left', width: '100%' }}>
+                        <GradientBox
+                            sx={{
+                                width: '100%',
+                                marginRight: 3,
+                                fontWeight: 'bold',
+                                borderRadius: '8px',
+                                textAlign: 'center',
+                                alignItems: 'center',
+                                display: 'flex',
+                                justifyContent: 'center',
+                            }}
+                        >
+                            {status}
+                        </GradientBox>
+
+                        <Button
+                            disabled
+                            sx={{ width: '100%', height: 48, fontSize: 16 }}
+                            variant="contained"
+                        >
+                            <img alt="infinity" src="/images/icon/icon-rocket.png" />
+                            &nbsp;&nbsp;Play
+                        </Button>
+                    </Box>
                 );
         }
     };
@@ -35,7 +78,12 @@ export const MiniGamesCard = ({ background, name, status, description, url }) =>
                     <Grid item xs={12} md={7}>
                         <SliderCustom {...ecosystemAngleSliderSettings}>
                             {background.map((item, index) => (
-                                <img alt={item.label} src={item} key={index} />
+                                <img
+                                    alt={item.label}
+                                    src={item}
+                                    key={index}
+                                    style={{ maxHeight: 336 }}
+                                />
                             ))}
                         </SliderCustom>
                     </Grid>
@@ -43,22 +91,6 @@ export const MiniGamesCard = ({ background, name, status, description, url }) =>
                         <Box display="flex">
                             <Box width={'80%'} display="flex" mb={2}>
                                 <Box width={'100%'} sx={{ color: 'white' }}>
-                                    <Box
-                                        sx={{
-                                            padding: '0.5rem 1rem',
-                                            borderRadius: '10px',
-                                            background: 'linear-gradient(270deg, #43DDDA 0%,  #1CC2BF 100%)',
-                                            display: 'inline-block',
-                                            marginBottom: 2,
-                                        }}
-                                    >
-                                        <Typography
-                                            variant="body2"
-                                            sx={{ width: 108, textAlign: 'center', fontWeight: 'bold' }}
-                                        >
-                                            {status}
-                                        </Typography>
-                                    </Box>
                                     <Typography variant="h3">{name}</Typography>
                                 </Box>
                             </Box>
@@ -67,7 +99,7 @@ export const MiniGamesCard = ({ background, name, status, description, url }) =>
                             mt={2}
                             sx={{ color: 'white', marginBottom: 4 }}
                             variant="body1"
-                            fontSize="0.9rem"
+                            fontSize="1rem"
                             textAlign={'justify'}
                         >
                             {description}

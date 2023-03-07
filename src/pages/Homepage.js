@@ -1,5 +1,12 @@
 import Page from '../components/common/Page';
-import { Ecosystem, GrowGame, Milestones, MiniGames, Networks, Partner, Signup, TitleMain } from '../components/home';
+import {
+    Ecosystem,
+    GrowGame,
+    Milestones, Networks,
+    Partner,
+    Signup,
+    TitleMain
+} from '../components/home';
 
 export default function Homepage() {
     return (
@@ -10,7 +17,6 @@ export default function Homepage() {
             <Milestones />
             <Partner />
             <Ecosystem />
-            <MiniGames />
             <Signup />
         </Page>
     );
