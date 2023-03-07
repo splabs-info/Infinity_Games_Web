@@ -42,27 +42,26 @@ module.exports = {
             },
         ],
     },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "public/index.html",
-      filename: "index.html",
-      publicPath: "/",
-    }),
-    new CopyWebpackPlugin({
-      patterns: [
-        { from: 'public/images', to: 'images' },
-        { from: 'public/fonts', to: 'fonts' },
-        { from: 'public/logo.png', to: '' },
-        {from: "public/games", to: "games"}
-      ],
-    }),
-  ],
-  devServer: {
-    static: path.join(__dirname, 'public'),
-    compress: true,
-    port: 9000,
-    hot: true,
-    historyApiFallback: true,
-    open: true
-  },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: 'public/index.html',
+            filename: 'index.html',
+            publicPath: '/',
+        }),
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: 'public/images', to: 'images' },
+                { from: 'public/fonts', to: 'fonts' },
+                { from: 'public/logo.png', to: '' },
+            ],
+        }),
+    ],
+    devServer: {
+        static: path.join(__dirname, 'public'),
+        compress: true,
+        port: 9000,
+        hot: true,
+        historyApiFallback: true,
+        open: true,
+    },
 };
