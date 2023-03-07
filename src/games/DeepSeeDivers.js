@@ -9,6 +9,7 @@ export default function DeepSeaDiver() {
         width: "100vw",
         height: "100vh",
       }}
+      title="deep-sea-divers-game"
     ></iframe>
   );
 }
