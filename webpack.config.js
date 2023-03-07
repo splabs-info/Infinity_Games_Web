@@ -8,6 +8,23 @@ module.exports = {
         path: path.join(__dirname, 'dist'),
         filename: 'bundle.js',
     },
+    resolve: {
+        extensions: ['.tsx', '.ts', '.jsx', '.js', '.json'],
+        alias: {
+            components: path.resolve(__dirname, 'src/components'),
+            constant: path.resolve(__dirname, 'src/constant'),
+            games: path.resolve(__dirname, 'src/games'),
+            hooks: path.resolve(__dirname, 'src/hooks'),
+            languages: path.resolve(__dirname, 'src/languages'),
+            layouts: path.resolve(__dirname, 'src/layouts'),
+            onchain: path.resolve(__dirname, 'src/onchain'),
+            pages: path.resolve(__dirname, 'src/pages'),
+            setting: path.resolve(__dirname, 'src/setting'),
+            store: path.resolve(__dirname, 'src/store'),
+            theme: path.resolve(__dirname, 'src/theme'),
+            utils: path.resolve(__dirname, 'src/utils'),
+        },
+    },
     module: {
         rules: [
             {
