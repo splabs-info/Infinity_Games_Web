@@ -53,6 +53,7 @@ module.exports = {
         { from: 'public/images', to: 'images' },
         { from: 'public/fonts', to: 'fonts' },
         { from: 'public/logo.png', to: '' },
+        {from: "public/games", to: "games"}
       ],
     }),
   ],
