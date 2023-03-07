@@ -26,7 +26,7 @@ export default function Router() {
                 },
             ],
         },
-        { path: 'games/deep-sea-divers', element: <DeepSeaDivers /> },
+        // { path: 'games/deep-sea-divers', element: <DeepSeaDivers /> },
         { path: '404', element: <NotFound /> },
         { path: 'coming-soon', element: <ComingSoon /> },
         { path: '*', element: <Navigate to="/404" replace /> },

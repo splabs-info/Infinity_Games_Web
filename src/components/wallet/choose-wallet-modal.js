@@ -56,7 +56,7 @@ export const ChooseWalletModal = () => {
             <Box p={3}>
                 <WalletButton onClick={connectToWallet}>
                     <Box className="img-box">
-                        <img src="/images/icon/metamask.png" alt="logo metamask" />
+                        <img src="/images/icon/metamask.svg" alt="logo metamask" />
                     </Box>
                     <Typography
                         className="custom-font"
@@ -72,7 +72,6 @@ export const ChooseWalletModal = () => {
                             href="https://metamask.io/download/"
                             target="_blank"
                         >
-                            {/* <Typography variant="caption">{library.INSTALL}</Typography> */}
                             <Typography variant="caption">INSTALL</Typography>
                         </InstallButton>
                     )}
