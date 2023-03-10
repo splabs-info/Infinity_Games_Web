@@ -18,6 +18,7 @@ export const Background = {
     gradient45: 'linear-gradient(45deg, #11ADA9 0%, #25CAC6 50%, #2AD8D3 100%)',
     gradient270: 'linear-gradient(270deg, #11ADA9 0%, #25CAC6 50%, #2AD8D3 100%)',
     gradientDark: 'linear-gradient(270deg, #47C1BE 0%, #406C80 100%)',
+    gradientGreen: 'linear-gradient(45deg, #0B3C46 0%, #E4FFCF 50%, #0E676C 100%)',
 };
 export const FontFamily = {
     bold: 'SVN-Gilroy-semi-bold',

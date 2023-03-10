@@ -1,26 +1,23 @@
-import React from "react";
+import Page from '../components/common/Page';
 import {
-  TitleMain,
-  Partner,
-  Networks,
-  GrowGame,
-  Milestones,
-  Ecosystem,
-  Signup,
-} from "../components/home";
-import Page from "../components/common/Page";
+    Ecosystem,
+    GrowGame,
+    Milestones, Networks,
+    Partner,
+    Signup,
+    TitleMain
+} from '../components/home';
 
 export default function Homepage() {
-
-  return (
-    <Page title="Home">
-      <TitleMain />
-      <Networks />
-      <GrowGame />
-      <Milestones />
-      <Partner />
-      <Ecosystem />
-      <Signup />
-    </Page>
-  );
+    return (
+        <Page title="Home">
+            <TitleMain />
+            <Networks />
+            <GrowGame />
+            <Milestones />
+            <Partner />
+            <Ecosystem />
+            <Signup />
+        </Page>
+    );
 }
