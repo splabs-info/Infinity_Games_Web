@@ -33,7 +33,7 @@ import { whitepaper } from 'components/home/Content';
 import { SliderCustom } from 'components/home/HomeStyles';
 import { buyOnSliderSettings } from 'components/home/SliderSettings';
 import { Color } from 'constant/styled';
-import { WalletContext } from 'hooks/use-connect';
+// import { WalletContext } from 'hooks/use-connect';
 import useResponsive from 'hooks/useResponsive';
 import { useContext, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
@@ -132,7 +132,7 @@ export default function Header() {
     const [openWalletDrawer, setOpenWalletDrawer] = useState();
     const [wallet, setWallet] = useState();
     const [changeINGData, setChangeINGData] = useState('');
-    const { address } = useContext(WalletContext);
+    // const { address } = useContext(WalletContext);
 
     const [showSidebar, setShowSidebar] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
@@ -191,13 +191,13 @@ export default function Header() {
         return () => clearInterval(timer);
     }, []);
 
-    useEffect(() => {
-        if (address) {
-            setWallet(address);
-            return;
-        }
-        return;
-    }, [address]);
+    // useEffect(() => {
+    //     if (address) {
+    //         setWallet(address);
+    //         return;
+    //     }
+    //     return;
+    // }, [address]);
 
     return (
         <>
@@ -245,11 +245,11 @@ export default function Header() {
                                             </a>
                                         );
                                 })}
-
+{/* 
                                 <ApplyButton onClick={handleOpenDrawer}>
                                     <img src="/images/icon/icon-wallet.png" alt="" />
                                     &nbsp;&nbsp; {library.Connect_Wallet}
-                                </ApplyButton>
+                                </ApplyButton> */}
                                 {/* <Languages sx={{ color: "white" }} /> */}
                             </Hidden>
 
@@ -508,11 +508,11 @@ export default function Header() {
                     </List>
                 </Box>
             </Drawer>
-            <WalletDrawer
+            {/* <WalletDrawer
                 address={wallet}
                 open={openWalletDrawer}
                 handleClose={setOpenWalletDrawer}
-            />
+            /> */}
         </>
     );
 }

@@ -1,4 +1,4 @@
-import { WalletProvider } from 'hooks/use-connect';
+// import { WalletProvider } from 'hooks/use-connect';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
@@ -22,24 +22,24 @@ export default function App() {
 
     return (
         <ThemeProvider>
-            <WalletProvider>
-                <ScrollToTop />
-                <Routers />
-                <ShowErrorComponent />
-                <BackgroundJob />
-                <ToastContainer
-                    position="top-right"
-                    autoClose={3000}
-                    hideProgressBar
-                    newestOnTop={false}
-                    closeOnClick
-                    rtl={false}
-                    pauseOnFocusLoss
-                    draggable={false}
-                    pauseOnHover
-                    theme="dark"
-                />
-            </WalletProvider>
+            {/* <WalletProvider> */}
+            <ScrollToTop />
+            <Routers />
+            <ShowErrorComponent />
+            <BackgroundJob />
+            <ToastContainer
+                position="top-right"
+                autoClose={3000}
+                hideProgressBar
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable={false}
+                pauseOnHover
+                theme="dark"
+            />
+            {/* </WalletProvider> */}
         </ThemeProvider>
     );
 }
